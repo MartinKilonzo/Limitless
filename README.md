@@ -11,7 +11,7 @@ $ npm install -g npm
 $ npm --version
 3.7.1
 ```
-If you do not get node 3.7+, download it from: [npm](https://registry.npmjs.org/npm/-/npm-3.7.3.tgz) and extract it to the `node_modules` folder of your node.js installation directory.
+If you do not get node 3.7+, download it from: [npm v3.7.1](https://registry.npmjs.org/npm/-/npm-3.7.3.tgz) and extract it to the `node_modules` folder of your node.js installation directory.
 
 You are now ready to begin installing the program!
 
