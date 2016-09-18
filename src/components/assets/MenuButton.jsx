@@ -7,9 +7,6 @@ class MenuButtonComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.highlight = this.highlight.bind(this);
-    this.unHighlight = this.unHighlight.bind(this);
-    this.showForm = this.showForm.bind(this);
   }
   highlight(event) {
     const style = event.target.style;
@@ -23,9 +20,6 @@ class MenuButtonComponent extends React.Component {
     style.color = colors.dark;
     event.target.style.boxShadow = 'none';
   }
-  showForm(event) {
-    console.log('go!')
-  }
   render() {
     // const width = document.getElementById('logo').offsetWidth / 2;
     const buttonStyle = {
@@ -37,11 +31,10 @@ class MenuButtonComponent extends React.Component {
       backgroundColor: 'transparent',
       color: colors.dark,
       fontWeight: 300,
-      textDecoration: 'none',
-      transition: '0.2s'
+      textDecoration: 'none'
     };
     return (
-      <Link to={this.props.to} style={buttonStyle} onMouseOver={this.highlight} onMouseOut={this.unHighlight} onClick={this.showForm}>
+      <Link to={this.props.to} style={buttonStyle} onMouseOver={this.highlight} onMouseOut={this.unHighlight}>
         {this.props.children}
       </Link>
     );

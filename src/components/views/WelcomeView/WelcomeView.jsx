@@ -1,27 +1,35 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
 
-import MenuButton from '../../assets/MenuButton.jsx';
 import Fingerprint from './Fingerprint.jsx';
+import Password from './Password.jsx';
 import colors from '../../assets/colors.jsx';
 
 class WelcomeViewComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.resizeWrapper = this.resizeWrapper.bind(this);
   }
   componentDidMount() {
     window.addEventListener('resize', this.resizeWrapper);
     const wrapper = document.getElementById('buttonWrapper');
-    this.resizeWrapper(wrapper);
+    this.resizeWrapper();
     wrapper.style.visibility = 'visible';
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this.resizeWrapper);
   }
-  resizeWrapper(element) {
-    element.style.width = document.getElementById('logo').offsetWidth + 'px';
+  resizeWrapper() {
+    const wrapper = document.getElementById('buttonWrapper');
+    wrapper.style.width = document.getElementById('logo').offsetWidth + 'px';
+  }
+  highlightFingerprint() {
+    const style = document.getElementById('fingerprint').style;
+    style.color = colors.accent;
+  }
+  unHighlightFingerprint() {
+    const style = document.getElementById('fingerprint').style;
+    style.color = colors.dark;
   }
   render() {
     //TODO: User toggle for disableing the sequence near bottom corner
@@ -76,10 +84,10 @@ class WelcomeViewComponent extends React.Component {
     return (
       <div style={styles.background}>
         <div style={styles.wrapper}>
-          <span id="logo" style={styles.logo}>Touch t<Fingerprint style={styles.fingerprint}></Fingerprint>
+          <span id="logo" style={styles.logo} onMouseOver={this.highlightFingerprint} onMouseLeave={this.unHighlightFingerprint}>Touch t<Fingerprint id="fingerprint" style={styles.fingerprint}></Fingerprint>
             Pay</span>
           <div id="buttonWrapper" style={styles.buttonWrapper}>
-            <MenuButton to="/home" {...this.props}>Password</MenuButton>
+            <Password callback={this.highlightFingerprint}></Password>
           </div>
         </div>
       </div>

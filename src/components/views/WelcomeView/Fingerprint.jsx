@@ -24,7 +24,7 @@ class FingerprintComponent extends React.Component {
       transition: 'color 2s'
     };
     return (
-      <FontIcon className="material-icons" style={this.props.style || style} onMouseOver={this.highlight} onMouseOut={this.unHighlight}>fingerprint</FontIcon>
+      <FontIcon id={this.props.id} className="material-icons" style={this.props.style || style} onMouseOver={this.highlight} onMouseOut={this.unHighlight}>fingerprint</FontIcon>
     );
   }
 }
