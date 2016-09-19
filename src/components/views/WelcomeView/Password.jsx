@@ -9,9 +9,8 @@ class PasswordComponent extends React.Component {
     this.state = {
       isFieldVisible: props.isFieldVisible
     };
-    this.showField = this.showField.bind(this);
   }
-  showField() {
+  showField = () => {
     this.setState({isFieldVisible: true}, () => {
       document.getElementById('pwfield').focus();
       this.props.callback();

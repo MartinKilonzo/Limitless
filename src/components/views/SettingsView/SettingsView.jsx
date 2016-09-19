@@ -1,6 +1,6 @@
 import React from 'react';
 
-class HomeViewComponent extends React.Component {
+class SettingsView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,11 +9,11 @@ class HomeViewComponent extends React.Component {
   }
   render() {
     return (
-      <h3>Home</h3>
+      <div>Settings</div>
     );
   }
 }
 
-HomeViewComponent.defaultProps = {};
+SettingsView.defaultProps = {};
 
-export default HomeViewComponent;
+export default SettingsView;

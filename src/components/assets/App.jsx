@@ -7,21 +7,24 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-import Routes from '../assets/Routes.jsx';
+import Nav from './Nav.jsx';
 
 class AppComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = props;
-    this.Router = new Router();
+    console.log(this.props);
   }
   componentWillMount = () => injectTapEventPlugin();
   render() {
-    //TODO: Handle extraneous routes
+    const routes = this.props.routes;
+    let viewNav = false;
+    if (routes[routes.length - 1].path && routes[routes.length - 1].path !== '/') viewNav = true;
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div>
-          <Routes></Routes>
+          {viewNav && <Nav></Nav>}
+          {this.props.children}
         </div>
       </MuiThemeProvider>
     );
