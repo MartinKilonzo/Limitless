@@ -23,7 +23,7 @@ class AppComponent extends React.Component {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div>
-          {viewNav && <Nav></Nav>}
+          {viewNav && <Nav {...this.props}></Nav>}
           {this.props.children}
         </div>
       </MuiThemeProvider>
