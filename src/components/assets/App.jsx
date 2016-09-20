@@ -13,24 +13,37 @@ class AppComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = props;
-    console.log(this.props);
   }
   componentWillMount = () => injectTapEventPlugin();
   render() {
     const routes = this.props.routes;
     let viewNav = false;
-    if (routes[routes.length - 1].path && routes[routes.length - 1].path !== '/') viewNav = true;
+    if (routes[routes.length - 1].path && routes[routes.length - 1].path !== '/')
+      viewNav = true;
+
+    const styles = {
+      container: {
+        fontFamily: 'inital',
+        marginTop: '50px'
+      }
+    };
+    const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
+       users: this.props.users
+     })
+    );
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div>
           {viewNav && <Nav {...this.props}></Nav>}
-          {this.props.children}
+          {childrenWithProps}
         </div>
       </MuiThemeProvider>
     );
   }
 }
 
-AppComponent.defaultProps = {};
+AppComponent.defaultProps = {
+  users: ['Tammy', 'Brenda', 'Tom', 'Alex']
+};
 
 export default AppComponent;

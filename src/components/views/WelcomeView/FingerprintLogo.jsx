@@ -6,15 +6,18 @@ import colors from '../../assets/colors.jsx';
 class FingerprintComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      highlight: props.highlight,
+      color: props.style.color
+    };
   }
-  highlight(event) {
+  highlight = (event) => {
     const style = event.target.style;
-    style.color = colors.accent;
+    style.color = this.state.highlight || colors.accent;
   }
-  unHighlight(event) {
+  unHighlight = (event) => {
     const style = event.target.style;
-    style.color = colors.dark;
+    style.color = this.state.color || colors.dark;
   }
   render() {
     const style = {

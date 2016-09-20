@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
 
-import Fingerprint from './Fingerprint.jsx';
+import FingerPrintLogo from './FingerPrintLogo.jsx';
 import Password from './Password.jsx';
 import colors from '../../assets/colors.jsx';
 
@@ -23,11 +23,11 @@ class WelcomeViewComponent extends React.Component {
     const wrapper = document.getElementById('buttonWrapper');
     wrapper.style.width = document.getElementById('logo').offsetWidth + 'px';
   }
-  highlightFingerprint() {
+  highlightFingerPrintLogo() {
     const style = document.getElementById('fingerprint').style;
     style.color = colors.accent;
   }
-  unHighlightFingerprint() {
+  unHighlightFingerPrintLogo() {
     const style = document.getElementById('fingerprint').style;
     style.color = colors.dark;
   }
@@ -84,10 +84,10 @@ class WelcomeViewComponent extends React.Component {
     return (
       <div style={styles.background}>
         <div style={styles.wrapper}>
-          <span id="logo" style={styles.logo} onMouseOver={this.highlightFingerprint} onMouseLeave={this.unHighlightFingerprint}>Touch t<Fingerprint id="fingerprint" style={styles.fingerprint}></Fingerprint>
+          <span id="logo" style={styles.logo} onMouseOver={this.highlightFingerPrintLogo} onMouseLeave={this.unHighlightFingerPrintLogo}>Touch t<FingerPrintLogo id="fingerprint" style={styles.fingerprint}></FingerPrintLogo>
             Pay</span>
           <div id="buttonWrapper" style={styles.buttonWrapper}>
-            <Password callback={this.highlightFingerprint}></Password>
+            <Password callback={this.highlightFingerPrintLogo}></Password>
           </div>
         </div>
       </div>
