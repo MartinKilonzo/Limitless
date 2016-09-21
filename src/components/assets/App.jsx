@@ -8,6 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import Nav from './Nav.jsx';
+import users from './users.jsx';
 
 class AppComponent extends React.Component {
   constructor(props) {
@@ -42,37 +43,6 @@ class AppComponent extends React.Component {
 }
 
 AppComponent.defaultProps = {
-  users: [
-    {
-      firstName: 'Tammy',
-      data: [
-        Math.random() * 100,
-        Math.random() * 100,
-        Math.random() * 100
-      ]
-    }, {
-      firstName: 'Brenda',
-      data: [
-        Math.random() * 100,
-        Math.random() * 100,
-        Math.random() * 100
-      ]
-    }, {
-      firstName: 'Tom',
-      data: [
-        Math.random() * 100,
-        Math.random() * 100,
-        Math.random() * 100
-      ]
-    }, {
-      firstName: 'Alex',
-      data: [
-        Math.random() * 100,
-        Math.random() * 100,
-        Math.random() * 100
-      ]
-    }
-  ]
-};
+  users: users};
 
 export default AppComponent;
