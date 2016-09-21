@@ -29,7 +29,7 @@ class PasswordFieldComponent extends React.Component {
       }
     }
     return (
-      <Form to="overview/marketing" style={styles.form}>
+      <Form to="overview/marketing/department" style={styles.form}>
         <input id="pwfield" type="password" style={styles.field}></input>
         <input type="submit" style={styles.submit}></input>
       </Form>

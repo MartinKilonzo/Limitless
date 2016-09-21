@@ -7,9 +7,9 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import App from './assets/App.jsx';
 import WelcomeView from './views/WelcomeView/WelcomeView.jsx';
 import Overview from './views/Overview/Overview.jsx';
-import MarketingView from './views/Overview/Departments/MarketingView.jsx'
-import OperationsView from './views/Overview/Departments/OperationsView.jsx'
-import FinanceView from './views/Overview/Departments/FinanceView.jsx'
+import DeptOverview from './views/Overview/DeptOverview.jsx';
+import TeamOverview from './views/Overview/TeamOverview.jsx';
+import MethodOverview from './views/Overview/MethodOverview.jsx';
 import PaymentView from './views/PaymentView/PaymentView.jsx';
 import TeamView from './views/TeamView/TeamView.jsx';
 import SettingsView from './views/SettingsView/SettingsView.jsx';
@@ -25,13 +25,13 @@ class RouterComponent extends React.Component {
       <Router history={browserHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={WelcomeView}></IndexRoute>
-          <Route path="overview" component={Overview}>
-            <Route path="marketing" component={MarketingView}></Route>
-            <Route path="operations" component={OperationsView}></Route>
-            <Route path="finance" component={FinanceView}></Route>
+          <Route path="overview/:dept" component={Overview}>
+            <Route path="department" component={DeptOverview}></Route>
+            <Route path="team" component={TeamOverview}></Route>
+            <Route path="method" component={MethodOverview}></Route>
           </Route>
           <Route path="payment" component={PaymentView}></Route>
-          <Route path="team" component={TeamView}></Route>
+          <Route path="manageTeam" component={TeamView}></Route>
           <Route path="settings" component={SettingsView}></Route>
         </Route>
       </Router>

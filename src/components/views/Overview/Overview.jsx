@@ -1,13 +1,12 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
 import {Toolbar, ToolbarGroup, ToolbarSeperator} from 'material-ui/Toolbar';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import FlatButton from 'material-ui/FlatButton';
 import DatePicker from 'material-ui/DatePicker';
 import Paper from 'material-ui/Paper';
 
-import DepartmentMenu from './DepartmentMenu.jsx';
-import SpendingMenu from './SpendingMenu.jsx';
-import DateMenu from './DateMenu.jsx';
+import DepartmentMenu from './Menus/DepartmentMenu.jsx';
 
 class OverviewComponent extends React.Component {
   constructor(props) {
@@ -18,7 +17,14 @@ class OverviewComponent extends React.Component {
       dropDownSelection: props.dropDownSelection
     };
   }
-  selectFromDropdown = (event, index, value) => this.setState({dropDownSelection: value});
+  selectFromDropdown = (event, index, value) => {
+    let path = this.props.location.pathname.split('/');
+    path[path.length - 1] = value;
+    path = path.join('/');
+    console.log(path);
+    browserHistory.push(path);
+    this.setState({dropDownSelection: value});
+  }
   setStartDate = (event, date) => {
     console.log('s', date);
     //TODO: Alert the user of rejected values through the snackbar; reject ok button
@@ -65,11 +71,9 @@ class OverviewComponent extends React.Component {
       )
     });
     const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
-       users: this.props.users,
-       view: this.state.dropDownSelection,
-       max: maxValue
-     })
-    );
+      users: this.props.users,
+      max: maxValue
+    }));
     //TODO: Finish dropdown menu
     return (
       <div className="container" style={styles.wrapper}>

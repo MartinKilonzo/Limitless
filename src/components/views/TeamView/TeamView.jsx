@@ -6,6 +6,7 @@ class TeamViewComponent extends React.Component {
     this.state = {
 
     };
+    console.log(this.props);
   }
   render() {
     return (

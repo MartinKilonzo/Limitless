@@ -1,7 +1,7 @@
 let users = [
   {
     firstName: 'Tammy',
-    department: 'Marketing',
+    department: 'marketing',
     data: [
       Math.random() * 100,
       Math.random() * 100,
@@ -9,7 +9,7 @@ let users = [
     ]
   }, {
     firstName: 'Brenda',
-    department: 'Marketing',
+    department: 'marketing',
     data: [
       Math.random() * 100,
       Math.random() * 100,
@@ -17,7 +17,7 @@ let users = [
     ]
   }, {
     firstName: 'Tom',
-    department: 'Marketing',
+    department: 'marketing',
     data: [
       Math.random() * 100,
       Math.random() * 100,
@@ -25,7 +25,7 @@ let users = [
     ]
   }, {
     firstName: 'Alex',
-    department: 'Marketing',
+    department: 'marketing',
     data: [
       Math.random() * 100,
       Math.random() * 100,
@@ -34,7 +34,7 @@ let users = [
   },
   {
     firstName: 'George',
-    department: 'Operations',
+    department: 'operations',
     data: [
       Math.random() * 100,
       Math.random() * 100,
@@ -42,7 +42,7 @@ let users = [
     ]
   }, {
     firstName: 'Charles',
-    department: 'Operations',
+    department: 'operations',
     data: [
       Math.random() * 100,
       Math.random() * 100,
@@ -50,7 +50,7 @@ let users = [
     ]
   }, {
     firstName: 'Monica',
-    department: 'Operations',
+    department: 'operations',
     data: [
       Math.random() * 100,
       Math.random() * 100,
@@ -58,7 +58,7 @@ let users = [
     ]
   }, {
     firstName: 'Gordon',
-    department: 'Finance',
+    department: 'finance',
     data: [
       Math.random() * 100,
       Math.random() * 100,

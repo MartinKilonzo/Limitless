@@ -17,6 +17,7 @@ class AppComponent extends React.Component {
   }
   componentWillMount = () => injectTapEventPlugin();
   render() {
+    console.log(this.props);
     const routes = this.props.routes;
     let viewNav = false;
     if (routes[routes.length - 1].path && routes[routes.length - 1].path !== '/')

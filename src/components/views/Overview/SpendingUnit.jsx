@@ -6,7 +6,7 @@ import Avatar from 'material-ui/Avatar';
 import FontIcon from 'material-ui/FontIcon';
 import {HorizontalBar} from 'react-chartjs-2';
 
-import colors from '../../../assets/colors.jsx';
+import colors from '../../assets/colors.jsx';
 
 class SpendingUnitComponent extends React.Component {
   constructor(props) {
