@@ -62,6 +62,7 @@
   },
   "dependencies": {
     "chart.js": "^1.1.1",
+    "color-scheme": "0.0.5",
     "core-js": "^2.0.0",
     "material-ui": "^0.15.4",
     "normalize.css": "^4.0.0",

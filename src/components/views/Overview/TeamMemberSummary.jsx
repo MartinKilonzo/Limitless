@@ -11,10 +11,9 @@ import colors from '../../assets/colors.jsx';
 class SpendingUnitComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
-  }
-  componentDidMount = () => {
-    this.setState({totalSpend: this.getTotal()});
+    this.state = {
+      totalSpend: this.getTotal()
+    };
   }
   getTotal = () => {
     let sum = 0;
@@ -33,40 +32,7 @@ class SpendingUnitComponent extends React.Component {
     return '$' + ret;
   }
   render() {
-    const styles = {
-      wrapper: {
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
-        margin: '0 2% 0 2%',
-        padding: '20px 20px 20px 20px'
-      },
-      unitWrapper: {
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'column',
-        width: '20%',
-        height: '100%'
-      },
-      unitLabel: {
-        marginTop: '8px'
-      },
-      spendingWrapper: {
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
-        width: '80%'
-      },
-      totalWrapper: {
-        display: 'flex',
-        alignItems: 'flex-end',
-        flexDirection: 'column',
-        width: '20%',
-        height: '100%',
-        fontWeight: 500
-      }
-    }
-    const tempData = {
+    const chartData = {
       labels: [
         "Credit", "Checking", "Savings"
       ],
@@ -119,15 +85,48 @@ class SpendingUnitComponent extends React.Component {
         }
       }
     };
+    const styles = {
+      wrapper: {
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'row',
+        margin: '0 2% 0 2%',
+        padding: '20px 20px 20px 20px'
+      },
+      unitWrapper: {
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        width: '20%',
+        height: '100%'
+      },
+      unitLabel: {
+        marginTop: '8px'
+      },
+      spendingWrapper: {
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'row',
+        width: '80%'
+      },
+      totalWrapper: {
+        display: 'flex',
+        alignItems: 'flex-end',
+        flexDirection: 'column',
+        width: '20%',
+        height: '100%',
+        fontWeight: 500
+      }
+    }
     return (
       <ListItem>
         <Paper style={styles.wrapper}>
           <div style={styles.unitWrapper}>
-            <Avatar size={60} style={styles.avatar}>{this.props.firstName.charAt(0)}</Avatar>
-            <span style={styles.unitLabel}>{this.props.firstName}</span>
+            <Avatar size={60} style={styles.avatar}>{this.props.label.charAt(0)}</Avatar>
+            <span style={styles.unitLabel}>{this.props.label}</span>
           </div>
           <div style={styles.spendingWrapper}>
-            <HorizontalBar style={styles.graph} data={tempData} options={chartOptions} height={75} maxWidth={600} redraw></HorizontalBar>
+            <HorizontalBar style={styles.graph} data={chartData} options={chartOptions} height={75} maxWidth={600} redraw></HorizontalBar>
           </div>
           <div style={styles.totalWrapper}>
             Total: {this.state.totalSpend}

@@ -101,7 +101,7 @@ const firstOfMonth = new Date(today.getFullYear(), today.getMonth(), today.getDa
 OverviewComponent.defaultProps = {
   startDate: firstOfMonth,
   endDate: today,
-  dropDownSelection: 2
+  dropDownSelection: 'department'
 };
 
 export default OverviewComponent;

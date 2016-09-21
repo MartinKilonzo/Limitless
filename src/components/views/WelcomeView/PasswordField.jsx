@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from 'react-router-form'
+import {browserHistory} from 'react-router';
 
 import colors from '../../assets/colors.jsx';
 
@@ -7,6 +7,10 @@ class PasswordFieldComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+  }
+  login = (event) => {
+    const path = 'overview/marketing/department/~';
+    browserHistory.push(path);
   }
   render() {
     const styles = {
@@ -29,10 +33,10 @@ class PasswordFieldComponent extends React.Component {
       }
     }
     return (
-      <Form to="overview/marketing/department" style={styles.form}>
+      <form onSubmit={this.login} style={styles.form}>
         <input id="pwfield" type="password" style={styles.field}></input>
         <input type="submit" style={styles.submit}></input>
-      </Form>
+      </form>
     );
   }
 }

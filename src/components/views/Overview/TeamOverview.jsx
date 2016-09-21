@@ -1,7 +1,7 @@
 import React from 'react';
 import List from 'material-ui/List';
 
-import SpendingUnit from './SpendingUnit.jsx';
+import TeamMemberSummary from './TeamMemberSummary.jsx';
 
 class TeamDeptViewComponent extends React.Component {
   constructor(props) {
@@ -18,8 +18,8 @@ class TeamDeptViewComponent extends React.Component {
     return (
       <List style={styles.wrapper}>
         {this.props.users.map((user, key) => {
-          if (user.department === this.props.params.dept)
-            return <SpendingUnit key={key} max={this.props.max} firstName={user.firstName} data={user.data}></SpendingUnit>
+          if (user.department === this.props.params.department)
+            return <TeamMemberSummary key={key} label={user.firstName} max={this.props.max} firstName={user.firstName} data={user.data}></TeamMemberSummary>
         })}
       </List>
     );
