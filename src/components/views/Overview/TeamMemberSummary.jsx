@@ -32,19 +32,24 @@ class SpendingUnitComponent extends React.Component {
     return '$' + ret;
   }
   render() {
+    let tmp =  [
+      colors.blue, colors.green, colors.yellow, colors.orange, colors.purple
+    ];
+    let colorList = [];
+    let iColor = 0;
+    for (var dataSet in this.props.labels) {
+      if (iColor === tmp.length) iColor = 0;
+      colorList.push(tmp[iColor++]);
+    }
     const chartData = {
-      labels: [
+      labels: this.props.labels || [
         "Credit", "Checking", "Savings"
       ],
       datasets: [
         {
           label: "",
-          backgroundColor: [
-            colors.blue, colors.green, colors.yellow, colors.orange, colors.purple
-          ],
-          hoverBackgroundColor: [
-            colors.blue, colors.green, colors.yellow, colors.orange, colors.purple
-          ],
+          backgroundColor: colorList,
+          hoverBackgroundColor: colorList,
           borderWidth: 0,
           data: this.props.data || [65.00, 59.05, 80.20]
         }
@@ -63,7 +68,7 @@ class SpendingUnitComponent extends React.Component {
             display: false,
             ticks: {
               beginAtZero: true,
-              suggestedMax: this.props.max* 1.1
+              suggestedMax: this.props.max * 1.1
             }
           }
         ],
@@ -119,7 +124,7 @@ class SpendingUnitComponent extends React.Component {
       }
     }
     return (
-      <ListItem>
+      <ListItem id={this.props.id}>
         <Paper style={styles.wrapper}>
           <div style={styles.unitWrapper}>
             <Avatar size={60} style={styles.avatar}>{this.props.label.charAt(0)}</Avatar>
@@ -137,6 +142,8 @@ class SpendingUnitComponent extends React.Component {
   }
 }
 
-SpendingUnitComponent.defaultProps = {};
+SpendingUnitComponent.defaultProps = {
+  labels: ["Credit", "Checking", "Savings"]
+};
 
 export default SpendingUnitComponent;

@@ -8,6 +8,14 @@ class TeamDeptViewComponent extends React.Component {
     super(props);
     this.state = {};
   }
+  componentDidMount = () => {
+    let member = this.props.params.member;
+    let memberSummary = document.getElementById(member);
+    if (memberSummary) {
+      let yScroll = memberSummary.getBoundingClientRect().top;
+      window.scroll(0, yScroll);
+    }
+  }
   render() {
     const styles = {
       wrapper: {
@@ -19,7 +27,7 @@ class TeamDeptViewComponent extends React.Component {
       <List style={styles.wrapper}>
         {this.props.users.map((user, key) => {
           if (user.department === this.props.params.department)
-            return <TeamMemberSummary key={key} label={user.firstName} max={this.props.max} firstName={user.firstName} data={user.data}></TeamMemberSummary>
+            return <TeamMemberSummary id={user.firstName.toLowerCase()} key={key} label={user.firstName} max={this.props.max} firstName={user.firstName} data={user.data}></TeamMemberSummary>
         })}
       </List>
     );

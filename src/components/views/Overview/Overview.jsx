@@ -14,16 +14,13 @@ class OverviewComponent extends React.Component {
     this.state = {
       startDate: props.startDate,
       endDate: props.endDate,
-      dropDownSelection: props.dropDownSelection
     };
   }
   selectFromDropdown = (event, index, value) => {
     let path = this.props.location.pathname.split('/');
-    path[path.length - 1] = value;
+    path[path.length - 2] = value;
     path = path.join('/');
-    console.log(path);
     browserHistory.push(path);
-    this.setState({dropDownSelection: value});
   }
   setStartDate = (event, date) => {
     console.log('s', date);
@@ -74,13 +71,14 @@ class OverviewComponent extends React.Component {
       users: this.props.users,
       max: maxValue
     }));
-    //TODO: Finish dropdown menu
+    let selection = this.props.location.pathname.split('/');
+    selection = selection[selection.length - 2];
     return (
       <div className="container" style={styles.wrapper}>
         <DepartmentMenu {...this.props}></DepartmentMenu>
         <Toolbar>
           <ToolbarGroup>
-            <DropDownMenu value={this.state.dropDownSelection} onChange={this.selectFromDropdown}>
+            <DropDownMenu value={selection} onChange={this.selectFromDropdown}>
               <FlatButton label="Department" value={'department'}></FlatButton>
               <FlatButton label="Team" value={'team'}></FlatButton>
               <FlatButton label="Method" value={'method'}></FlatButton>
@@ -100,8 +98,7 @@ const today = new Date();
 const firstOfMonth = new Date(today.getFullYear(), today.getMonth(), today.getDay() - today.getDay() + 1);
 OverviewComponent.defaultProps = {
   startDate: firstOfMonth,
-  endDate: today,
-  dropDownSelection: 'department'
+  endDate: today
 };
 
 export default OverviewComponent;

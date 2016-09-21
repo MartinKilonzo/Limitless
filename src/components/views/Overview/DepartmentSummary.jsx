@@ -2,9 +2,8 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import ListItem from 'material-ui/List';
 import HorizontalBar from 'react-chartjs-2';
-import ColorScheme from 'color-scheme';
 
-// import colors from '../../assets/colors';
+import colors from '../../assets/colors';
 
 class DepartmentSummaryComponent extends React.Component {
   constructor(props) {
@@ -30,18 +29,14 @@ class DepartmentSummaryComponent extends React.Component {
     return '$' + ret;
   }
   render() {
-    let scheme = new ColorScheme;
-    scheme.from_hue(0 + Math.random() * (255-0))
-          .scheme('triade')
-          .variation('soft');
-
+    let tmp =  [
+      colors.blue, colors.green, colors.yellow, colors.orange, colors.purple
+    ];
     let colorList = [];
-    scheme.colors().forEach(color => colorList.push('#' + color));
-    let colors = [];
     let iColor = 0;
     for (var dataSet in this.props.labels) {
-      if (iColor === colorList.length) iColor = 0;
-      colors.push(colorList[iColor++]);
+      if (iColor === tmp.length) iColor = 0;
+      colorList.push(tmp[iColor++]);
     }
     const chartData = {
       labels: this.props.labels || [
@@ -50,8 +45,8 @@ class DepartmentSummaryComponent extends React.Component {
       datasets: [
         {
           label: "",
-          backgroundColor: colors,
-          hoverBackgroundColor: colors,
+          backgroundColor: colorList,
+          hoverBackgroundColor: colorList,
           borderWidth: 0,
           data: this.props.data || [65.00, 59.05, 80.20]
         }

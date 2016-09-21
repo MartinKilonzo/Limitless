@@ -11,9 +11,10 @@ class DepartmentMenuComponent extends React.Component {
     };
   }
   changeView = (view) => {
-    let deptView = '';
-    if (this.props.routes.length > 2) deptView = '/' + this.props.routes[this.props.routes.length - 1].path;
-    browserHistory.push('overview/' + view + deptView);
+    let path = this.props.location.pathname.split('/');
+    path[1] = view;
+    path = path.join('/');
+    browserHistory.push(path);
   }
   render() {
     const marketingIcon = <FontIcon className="material-icons">local_offer</FontIcon>;
