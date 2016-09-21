@@ -27,10 +27,7 @@ class AppComponent extends React.Component {
         marginTop: '50px'
       }
     };
-    const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
-       users: this.props.users
-     })
-    );
+    const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {users: this.props.users}));
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div>
@@ -43,7 +40,37 @@ class AppComponent extends React.Component {
 }
 
 AppComponent.defaultProps = {
-  users: ['Tammy', 'Brenda', 'Tom', 'Alex']
+  users: [
+    {
+      firstName: 'Tammy',
+      data: [
+        Math.random() * 100,
+        Math.random() * 100,
+        Math.random() * 100
+      ]
+    }, {
+      firstName: 'Brenda',
+      data: [
+        Math.random() * 100,
+        Math.random() * 100,
+        Math.random() * 100
+      ]
+    }, {
+      firstName: 'Tom',
+      data: [
+        Math.random() * 100,
+        Math.random() * 100,
+        Math.random() * 100
+      ]
+    }, {
+      firstName: 'Alex',
+      data: [
+        Math.random() * 100,
+        Math.random() * 100,
+        Math.random() * 100
+      ]
+    }
+  ]
 };
 
 export default AppComponent;
