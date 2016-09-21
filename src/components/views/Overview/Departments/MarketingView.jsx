@@ -19,7 +19,7 @@ class MarketingViewComponent extends React.Component {
       <div>
         <List style={styles.wrapper}>
           {this.props.view === 'team' && this.props.users.map((user, key) => {
-            return <SpendingUnit key={key} {...user}></SpendingUnit>
+            return <SpendingUnit key={key} max={this.props.max} {...user}></SpendingUnit>
           })}
         </List>
         {this.props.view !== 'team' && <div>

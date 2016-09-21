@@ -11,14 +11,26 @@ import colors from '../../../assets/colors.jsx';
 class SpendingUnitComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
-    console.log(this.props);
+    this.state = {};
+  }
+  componentDidMount = () => {
+    this.setState({totalSpend: this.getTotal()});
   }
   getTotal = () => {
     let sum = 0;
     this.props.data.forEach(transaction => sum += transaction);
-    return sum;
+    return this.formatMoney(sum);
+  }
+  formatMoney = (value) => {
+    let ret = (value * 100 | 0);
+    const truncated = ret;
+    ret /= 100;
+    if ((truncated) % 100 === 0) {
+      ret += '.00';
+    } else if ((truncated) % 10 === 0) {
+      ret += '0';
+    }
+    return '$' + ret;
   }
   render() {
     const styles = {
@@ -47,10 +59,11 @@ class SpendingUnitComponent extends React.Component {
       },
       totalWrapper: {
         display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
+        alignItems: 'flex-end',
+        flexDirection: 'column',
         width: '20%',
-        height: '100%'
+        height: '100%',
+        fontWeight: 500
       }
     }
     const tempData = {
@@ -71,6 +84,7 @@ class SpendingUnitComponent extends React.Component {
         }
       ]
     };
+    console.log(this.props)
     const chartOptions = {
       title: {
         display: false
@@ -84,7 +98,7 @@ class SpendingUnitComponent extends React.Component {
             display: false,
             ticks: {
               beginAtZero: true,
-              suggestedMax: this.state.suggestedMax
+              suggestedMax: this.props.max* 1.1
             }
           }
         ],
@@ -102,16 +116,7 @@ class SpendingUnitComponent extends React.Component {
       },
       tooltips: {
         callbacks: {
-          label: (tooltipItem, data) => {
-            let value = tooltipItem.xLabel;
-            const noDecimals = value * 100;
-            if ((noDecimals) % 100 === 0) {
-              value += '.00';
-            } else if ((noDecimals) % 10 === 0) {
-              value += '0';
-            }
-            return '$' + value;
-          }
+          label: (tooltipItem, data) => this.formatMoney(tooltipItem.xLabel)
         }
       }
     };
@@ -126,7 +131,7 @@ class SpendingUnitComponent extends React.Component {
             <HorizontalBar style={styles.graph} data={tempData} options={chartOptions} height={75} maxWidth={600} redraw></HorizontalBar>
           </div>
           <div style={styles.totalWrapper}>
-            {this.getTotal}
+            Total: {this.state.totalSpend}
           </div>
         </Paper>
       </ListItem>

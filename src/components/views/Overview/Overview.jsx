@@ -56,9 +56,18 @@ class OverviewComponent extends React.Component {
         color: 'white'
       }
     }
+    let maxValue = 0; // Used such that each graph has the same x-axis scale (0 -> maxValue * 1.1)
+    this.props.users.forEach(user => {
+      user.data.forEach(spend => {
+        if (spend > maxValue)
+          maxValue = spend;
+        }
+      )
+    });
     const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
        users: this.props.users,
-       view: this.state.dropDownSelection
+       view: this.state.dropDownSelection,
+       max: maxValue
      })
     );
     //TODO: Finish dropdown menu

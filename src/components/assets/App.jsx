@@ -27,7 +27,9 @@ class AppComponent extends React.Component {
         marginTop: '50px'
       }
     };
-    const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {users: this.props.users}));
+    const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
+      users: this.props.users,
+    }));
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div>
