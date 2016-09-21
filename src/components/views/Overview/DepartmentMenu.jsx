@@ -20,7 +20,6 @@ class DepartmentMenuComponent extends React.Component {
     const operationsIcon = <FontIcon className="material-icons">settings</FontIcon>;
     const financeIcon = <FontIcon className="material-icons">trending_up</FontIcon>;
     const path = this.props.params.dept;
-    console.log(path);
     return (
       <Tabs value={path}>
         <Tab icon={marketingIcon} label="MARKETING" value='marketing' onClick={this.changeView.bind(this, 'marketing')}></Tab>

@@ -26,7 +26,7 @@ class NavComponent extends React.Component {
     browserHistory.push('payment');
   }
   render() {
-    const route = this.props.routes[this.props.routes.length - 1].path;
+    const route = this.props.location.pathname.split('/')[0];
     const styles = {
       title: {
         textAlign: 'center'
@@ -47,7 +47,7 @@ class NavComponent extends React.Component {
         {true && <div>
           <AppBar titleStyle={styles.title} title={fingerprint} onTitleTouchTap={this.handleTitleAction} iconClassNameRight="muidocs-icon-navigation-expand-more" onLeftIconButtonTouchTap={this.handleToggle}></AppBar>
           <Drawer docked={false} width={250} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
-            <RaisedButton label="Overview" onTouchTap={this.handleClose.bind(this, 'overview')} fullWidth primary={route === 'overview'}></RaisedButton>
+            <RaisedButton label="Overview" onTouchTap={this.handleClose.bind(this, 'overview/marketing/team')} fullWidth primary={route === 'overview'}></RaisedButton>
             <RaisedButton label="Payment" onTouchTap={this.handleClose.bind(this, 'payment')} fullWidth primary={route === 'payment'}></RaisedButton>
             <RaisedButton label="Teams" onTouchTap={this.handleClose.bind(this, 'manageTeam')} fullWidth primary={route === 'manageTeam'}></RaisedButton>
             <RaisedButton label="Settings" onTouchTap={this.handleClose.bind(this, 'settings')} fullWidth primary={route === 'settings'}></RaisedButton>

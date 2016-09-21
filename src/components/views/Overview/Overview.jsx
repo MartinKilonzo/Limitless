@@ -6,7 +6,7 @@ import FlatButton from 'material-ui/FlatButton';
 import DatePicker from 'material-ui/DatePicker';
 import Paper from 'material-ui/Paper';
 
-import DepartmentMenu from './Menus/DepartmentMenu.jsx';
+import DepartmentMenu from './DepartmentMenu.jsx';
 
 class OverviewComponent extends React.Component {
   constructor(props) {

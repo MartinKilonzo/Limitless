@@ -18,9 +18,8 @@ class TeamDeptViewComponent extends React.Component {
     return (
       <List style={styles.wrapper}>
         {this.props.users.map((user, key) => {
-          console.log(user);
           if (user.department === this.props.params.dept)
-            return <SpendingUnit key={key} max={this.props.max} {...user}></SpendingUnit>
+            return <SpendingUnit key={key} max={this.props.max} firstName={user.firstName} data={user.data}></SpendingUnit>
         })}
       </List>
     );

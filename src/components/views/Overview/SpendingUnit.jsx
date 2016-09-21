@@ -84,7 +84,6 @@ class SpendingUnitComponent extends React.Component {
         }
       ]
     };
-    console.log(this.props)
     const chartOptions = {
       title: {
         display: false
