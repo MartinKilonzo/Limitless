@@ -4,7 +4,7 @@ import Drawer from 'material-ui/Drawer';
 import RaisedButton from 'material-ui/RaisedButton';
 import {browserHistory} from 'react-router';
 
-import FingerPrintLogo from '../views/WelcomeView/FingerPrintLogo.jsx';
+import FingerprintLogo from '../views/WelcomeView/FingerprintLogo.jsx';
 import colors from './colors.jsx'
 
 class NavComponent extends React.Component {
@@ -41,7 +41,7 @@ class NavComponent extends React.Component {
         cursor: 'pointer'
       }
     };
-    const fingerprint = <FingerPrintLogo style={styles.fingerprint} highlight={colors.blue}></FingerPrintLogo>;
+    const fingerprint = <FingerprintLogo style={styles.fingerprint} highlight={colors.blue}></FingerprintLogo>;
     return (
       <div>
         {true && <div>

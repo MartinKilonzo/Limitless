@@ -2,13 +2,14 @@ import 'normalize.css/normalize.css';
 import 'styles/App.css';
 
 import React from 'react';
-import {Router} from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import Nav from './Nav.jsx';
 import users from './users.jsx';
+import payments from './payments.jsx';
 
 class AppComponent extends React.Component {
   constructor(props) {
@@ -21,7 +22,6 @@ class AppComponent extends React.Component {
     let viewNav = false;
     if (routes[routes.length - 1].path && routes[routes.length - 1].path !== '/')
       viewNav = true;
-
     const styles = {
       container: {
         fontFamily: 'inital',
@@ -29,10 +29,15 @@ class AppComponent extends React.Component {
       }
     };
     const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
-      users: this.props.users,
+      userData: this.props.userData,
     }));
+    console.log(this.props)
+    let view = this.props.location.pathname.split('/');
+    view = view[0];
+    let theme;
+    if (view === 'payment') theme = darkBaseTheme;
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme()}>
+      <MuiThemeProvider muiTheme={getMuiTheme(theme)}>
         <div>
           {viewNav && <Nav {...this.props}></Nav>}
           {childrenWithProps}
@@ -43,6 +48,7 @@ class AppComponent extends React.Component {
 }
 
 AppComponent.defaultProps = {
-  users: users};
+  userData: {users: users, paymentMethods: payments}
+};
 
 export default AppComponent;
