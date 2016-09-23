@@ -11,6 +11,7 @@ import DepartmentOverview from './views/Overview/DepartmentOverview.jsx';
 import TeamOverview from './views/Overview/TeamOverview.jsx';
 import MethodOverview from './views/Overview/MethodOverview.jsx';
 import PaymentView from './views/PaymentView/PaymentView.jsx';
+import PaymentView2 from './views/PaymentView/PaymentView2.jsx';
 import TeamView from './views/TeamView/TeamView.jsx';
 import SettingsView from './views/SettingsView/SettingsView.jsx';
 
@@ -31,6 +32,7 @@ class RouterComponent extends React.Component {
             <Route path="method/:member" component={MethodOverview}></Route>
           </Route>
           <Route path="payment" component={PaymentView}></Route>
+          <Route path="payment2" component={PaymentView2}></Route>
           <Route path="manageTeam" component={TeamView}></Route>
           <Route path="settings" component={SettingsView}></Route>
         </Route>

@@ -49,6 +49,7 @@ class NavComponent extends React.Component {
           <Drawer docked={false} width={250} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
             <RaisedButton label="Overview" onTouchTap={this.handleClose.bind(this, 'overview/marketing/department/1')} fullWidth primary={route === 'overview'}></RaisedButton>
             <RaisedButton label="Payment" onTouchTap={this.handleClose.bind(this, 'payment')} fullWidth primary={route === 'payment'}></RaisedButton>
+            <RaisedButton label="Payment2" onTouchTap={this.handleClose.bind(this, 'payment2')} fullWidth primary={route === 'payment2'}></RaisedButton>
             <RaisedButton label="Teams" onTouchTap={this.handleClose.bind(this, 'manageTeam')} fullWidth primary={route === 'manageTeam'}></RaisedButton>
             <RaisedButton label="Settings" onTouchTap={this.handleClose.bind(this, 'settings')} fullWidth primary={route === 'settings'}></RaisedButton>
           </Drawer>

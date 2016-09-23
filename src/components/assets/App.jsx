@@ -35,7 +35,7 @@ class AppComponent extends React.Component {
     let view = this.props.location.pathname.split('/');
     view = view[0];
     let theme;
-    if (view === 'payment') theme = darkBaseTheme;
+    if (view === 'payment' || view === 'payment2') theme = darkBaseTheme;
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(theme)}>
         <div>
