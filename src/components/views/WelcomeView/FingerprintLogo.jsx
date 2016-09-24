@@ -23,7 +23,7 @@ class FingerprintComponent extends React.Component {
     const style = {
       height: '20px',
       width: '20px',
-      color: colors.dark,
+      color: "rgb(231,196,38)",
       transition: 'color 2s'
     };
     return (

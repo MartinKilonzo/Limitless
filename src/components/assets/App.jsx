@@ -6,7 +6,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {cyan500} from 'material-ui/styles/colors';
+import {cyan700, grey600, pinkA100, pinkA200, pinkA400, fullWhite} from 'material-ui/styles/colors';
 
 import Nav from './Nav.jsx';
 import users from './users.jsx';
@@ -15,12 +15,26 @@ import payments from './payments.jsx';
 const muiTheme = getMuiTheme({
   palette: {
     primary1Color: "#002888",
-    primary1Color: "#002888",
+    primary2Color: "#002888",
     secondaryColor: "#1a5eff",
     accent1Color: "rgb(252,210,29)",
   },
   appBar: {
     height: 50,
+  },
+});
+
+const custommuiTheme = getMuiTheme({
+  palette: {
+        primary1Color: "002888",
+        primary2Color: "002888",
+        primary3Color: grey600,
+        accent1Color: pinkA200,
+        accent2Color: pinkA400,
+        accent3Color: pinkA100,
+        textColor: fullWhite,
+        alternateTextColor: '#303030',
+        canvasColor: '#303030',
   },
 });
 
@@ -49,7 +63,7 @@ class AppComponent extends React.Component {
     let view = this.props.location.pathname.split('/');
     view = view[0];
     let theme = muiTheme;
-    if (view === 'payment' || view === 'payment2') theme = darkBaseTheme;
+    if (view === 'payment' || view === 'payment2') theme = custommuiTheme;
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(theme)}>
         <div>
