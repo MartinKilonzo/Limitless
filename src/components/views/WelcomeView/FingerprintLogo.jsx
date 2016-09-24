@@ -17,13 +17,13 @@ class FingerprintComponent extends React.Component {
   }
   unHighlight = (event) => {
     const style = event.target.style;
-    style.color = this.state.color || colors.dark;
+    style.color = this.state.color;
   }
   render() {
     const style = {
       height: '20px',
       width: '20px',
-      color: "rgb(231,196,38)",
+      color: 'white',
       transition: 'color 2s'
     };
     return (

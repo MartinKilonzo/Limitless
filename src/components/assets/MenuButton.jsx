@@ -6,18 +6,21 @@ import colors from './colors.jsx';
 class MenuButtonComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      color: props.style.color
+    };
   }
   highlight(event) {
     const style = event.target.style;
     style.fontWeight = 400;
-    style.color = colors.accent;
-    event.target.style.boxShadow = '0px 1px 2px ' + colors.dark;
+    style.color = 'rgb(231,196,38)';
+    style.backgroundColor = 'rgb(231,196,38)';
+    event.target.style.boxShadow = '0px 1px 2px ' + 'white';
   }
   unHighlight(event) {
     const style = event.target.style;
     style.fontWeight = 300;
-    style.color = colors.dark;
+    style.color = this.stae.color;
     event.target.style.boxShadow = 'none';
   }
   render() {
@@ -29,7 +32,7 @@ class MenuButtonComponent extends React.Component {
       marginRight: '5px',
       textAlign: 'center',
       backgroundColor: 'transparent',
-      color: colors.dark,
+      color: 'white',
       fontWeight: 300,
       textDecoration: 'none'
     };

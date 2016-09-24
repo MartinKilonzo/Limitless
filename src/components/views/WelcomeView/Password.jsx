@@ -11,7 +11,9 @@ class PasswordComponent extends React.Component {
     };
   }
   showField = () => {
-    this.setState({isFieldVisible: true}, () => {
+    this.setState({
+      isFieldVisible: true
+    }, () => {
       document.getElementById('pwfield').focus();
       this.props.callback();
     });
@@ -20,12 +22,13 @@ class PasswordComponent extends React.Component {
     const style = event.target.style;
     style.fontWeight = 400;
     style.color = colors.accent;
-    event.target.style.boxShadow = '0px 1px 2px ' + colors.dark;
+    event.target.style.boxShadow = '0px 1px 2px ' +
+      'white';
   }
   unHighlight(event) {
     const style = event.target.style;
     style.fontWeight = 300;
-    style.color = colors.dark;
+    style.color = colors.base;
     event.target.style.boxShadow = 'none';
   }
   render() {
@@ -43,10 +46,12 @@ class PasswordComponent extends React.Component {
         marginLeft: '5px',
         marginRight: '5px',
         textAlign: 'center',
-        backgroundColor: 'transparent',
-        color: colors.dark,
+        backgroundColor: 'white',
+        color: colors.base,
         fontWeight: 300,
-        textDecoration: 'none'
+        textDecoration: 'none',
+        transition: '0.13s',
+        boxShadow: '0px 1px 2px ' + 'white'
       }
     };
     return (

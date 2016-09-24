@@ -52,7 +52,7 @@ class WelcomeViewComponent extends React.Component {
         top: '40vh'
       },
       logo: {
-        color: "rgb(231,196,38)", // Transition from dark to base
+        color: "white", // Transition from dark to base
         textAlign: 'center',
         fontFamily: 'Roboto, sans-serif',
         fontSize: '56pt',
@@ -76,7 +76,7 @@ class WelcomeViewComponent extends React.Component {
         marginLeft: '-5px',
         fontSize: '36pt',
         fontWeight: '100',
-        color: "rgb(231,196,38)",
+        color: 'white',
         transition: 'color 1s'
       }
     };
@@ -84,7 +84,7 @@ class WelcomeViewComponent extends React.Component {
     return (
       <div style={styles.background}>
         <div style={styles.wrapper}>
-          <span id="logo" style={styles.logo} onMouseOver={this.highlightFingerPrintLogo} onMouseLeave={this.unHighlightFingerPrintLogo}>Touch t<FingerPrintLogo id="fingerprint" style={styles.fingerprint}></FingerPrintLogo>
+          <span id="logo" style={styles.logo} onMouseOver={this.highlightFingerPrintLogo} onMouseLeave={this.unHighlightFingerPrintLogo}>Touch t<FingerPrintLogo id="fingerprint" style={styles.fingerprint} highlight={colors.accent}></FingerPrintLogo>
             Pay</span>
           <div id="buttonWrapper" style={styles.buttonWrapper}>
             <Password callback={this.highlightFingerPrintLogo}></Password>

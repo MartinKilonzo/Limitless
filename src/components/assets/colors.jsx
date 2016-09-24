@@ -1,5 +1,5 @@
 var colors = {
-  base: '#393e41',
+  base: '#002888',
   dark: '#d3d0cb',
   light: '#e7e5df',
   blue: '#9AD2CB',
@@ -10,7 +10,7 @@ var colors = {
   white: '#FFFCFC',
   offwhite: '#FFFDF7',
   shadow: 'rgba(0,0,0,.26)',
-  accent: '#44bba4',
+  accent: 'rgb(231,196,38)',
   highlight: '#e7bb41',
   success: '#3c763d',
   warning: '#66512c',
