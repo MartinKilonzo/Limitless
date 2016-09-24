@@ -1,7 +1,8 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 
-import PaymentMethod from './PaymentMethod.jsx';
+import CardPayment from './CardPayment.jsx';
+import AccountPayment from './AccountPayment.jsx';
 
 class PaymentViewComponent extends React.Component {
   constructor(props) {
@@ -40,8 +41,12 @@ class PaymentViewComponent extends React.Component {
     return (
       <div className="container" style={styles.wrapper}>
         {this.props.userData.paymentMethods.map((paymentMethod, key) => {
-          return <PaymentMethod key={key} {...paymentMethod}></PaymentMethod>
-        })}
+          if (paymentMethod.type === 'credit')
+            return <CardPayment key={key} {...paymentMethod}></CardPayment>;
+          else
+            return <AccountPayment key={key} {...paymentMethod}></AccountPayment>;
+          }
+        )}
       </div>
     );
   }
