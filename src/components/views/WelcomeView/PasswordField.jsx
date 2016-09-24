@@ -9,7 +9,7 @@ class PasswordFieldComponent extends React.Component {
     this.state = {};
   }
   login = (event) => {
-    const path = 'overview/marketing/department/~';
+    const path = 'overview/marketing/team/~';
     browserHistory.push(path);
   }
   render() {

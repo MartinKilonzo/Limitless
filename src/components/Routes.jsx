@@ -7,9 +7,7 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import App from './assets/App.jsx';
 import WelcomeView from './views/WelcomeView/WelcomeView.jsx';
 import Overview from './views/Overview/Overview.jsx';
-import DepartmentOverview from './views/Overview/DepartmentOverview.jsx';
 import TeamOverview from './views/Overview/TeamOverview.jsx';
-import MethodOverview from './views/Overview/MethodOverview.jsx';
 import PaymentView from './views/PaymentView/PaymentView.jsx';
 import PaymentView2 from './views/PaymentView/PaymentView2.jsx';
 import TeamView from './views/TeamView/TeamView.jsx';
@@ -27,9 +25,7 @@ class RouterComponent extends React.Component {
         <Route path="/" component={App}>
           <IndexRoute component={WelcomeView}></IndexRoute>
           <Route path="overview/:department" component={Overview}>
-            <Route path="department/:member" component={DepartmentOverview}></Route>
             <Route path="team/:member" component={TeamOverview}></Route>
-            <Route path="method/:member" component={MethodOverview}></Route>
           </Route>
           <Route path="payment" component={PaymentView}></Route>
           <Route path="payment2" component={PaymentView2}></Route>

@@ -12,21 +12,23 @@ class DepartmentOverviewComponent extends React.Component {
   filterDataBy = (field, value) => {
     let ret = [];
     this.props.users.forEach(user => {
-      if (user[field] ===  value) ret.push(user);
-    });
+      if (user[field] === value)
+        ret.push(user);
+      }
+    );
     return ret;
   }
   getDataBy = (criteria, dataToSort) => {
     let users = dataToSort || this.props.users;
     let sumCategories = {};
     users.forEach(user => {
-        let sum = 0;
-        user.data.forEach(payment => sum += payment);
-        if (typeof sumCategories[user[criteria]] === 'undefined')
-          sumCategories[user[criteria]] = 0;
-        sumCategories[user[criteria]] += sum;
+      let sum = 0;
+      user.data.forEach(payment => sum += payment);
+      if (typeof sumCategories[user[criteria]] === 'undefined')
+        sumCategories[user[criteria]] = 0;
+      sumCategories[user[criteria]] += sum;
     });
-    // Create two arrays to be used:
+    // Create two arrays (labels and data) to be used:
     let categoryLabels = [];
     let data = [];
     for (var category in sumCategories) {
@@ -51,6 +53,7 @@ class DepartmentOverviewComponent extends React.Component {
     browserHistory.push(path);
   }
   render() {
+    console.log(this.props.users);
     /**
      * Pie charts that summarize spending by:
      * Department (overview)

@@ -128,7 +128,8 @@ class SpendingUnitComponent extends React.Component {
         <Paper style={styles.wrapper}>
           <div style={styles.unitWrapper}>
             <Avatar size={60} style={styles.avatar}>{this.props.label.charAt(0)}</Avatar>
-            <span style={styles.unitLabel}>{this.props.label}</span>
+            <div style={styles.unitLabel}>{this.props.label}</div>
+            <div style={styles.unitLabel}>{this.props.position || 'Member'}</div>
           </div>
           <div style={styles.spendingWrapper}>
             <HorizontalBar style={styles.graph} data={chartData} options={chartOptions} height={75} maxWidth={600} redraw></HorizontalBar>

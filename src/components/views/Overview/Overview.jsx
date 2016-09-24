@@ -6,6 +6,7 @@ import FlatButton from 'material-ui/FlatButton';
 import DatePicker from 'material-ui/DatePicker';
 import Paper from 'material-ui/Paper';
 
+import DepartmentOverview from './DepartmentOverview.jsx';
 import DepartmentMenu from './DepartmentMenu.jsx';
 
 class OverviewComponent extends React.Component {
@@ -75,13 +76,12 @@ class OverviewComponent extends React.Component {
     selection = selection[selection.length - 2];
     return (
       <div className="container" style={styles.wrapper}>
+        <DepartmentOverview users={this.props.userData.users} {...this.props}></DepartmentOverview>
         <DepartmentMenu {...this.props}></DepartmentMenu>
         <Toolbar>
           <ToolbarGroup>
             <DropDownMenu value={selection} onChange={this.selectFromDropdown}>
-              <FlatButton label="Department" value={'department'}></FlatButton>
               <FlatButton label="Team" value={'team'}></FlatButton>
-              <FlatButton label="Method" value={'method'}></FlatButton>
             </DropDownMenu>
           </ToolbarGroup>
           <ToolbarGroup lastChild>

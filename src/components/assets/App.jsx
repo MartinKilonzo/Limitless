@@ -6,44 +6,54 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {cyan700, grey600, pinkA100, pinkA200, pinkA400, fullWhite} from 'material-ui/styles/colors';
+import {
+  cyan700,
+  grey600,
+  pinkA100,
+  pinkA200,
+  pinkA400,
+  fullWhite
+} from 'material-ui/styles/colors';
 
 import Nav from './Nav.jsx';
 import users from './users.jsx';
 import payments from './payments.jsx';
 
-const muiTheme = getMuiTheme({
+const lightTheme = getMuiTheme({
   palette: {
     primary1Color: '#002888',
     primary2Color: '#002888',
     secondaryColor: '#1a5eff',
-    accent1Color: 'rgb(252,210,29)',
+    accent1Color: 'rgb(252,210,29)'
   },
   appBar: {
-    height: 50,
-  },
+    height: 50
+  }
 });
 
-const custommuiTheme = getMuiTheme({
+const darkTheme = getMuiTheme({
   palette: {
-        primary1Color: '#002888',
-        primary2Color: '#002888',
-        primary3Color: grey600,
-        accent1Color: pinkA200,
-        accent2Color: pinkA400,
-        accent3Color: pinkA100,
-        textColor: fullWhite,
-        alternateTextColor: '#303030',
-        canvasColor: '#303030',
-  },
+    primary1Color: 'white',
+    primary2Color: 'white',
+    primary3Color: grey600,
+    accent1Color: pinkA200,
+    accent2Color: pinkA400,
+    accent3Color: pinkA100,
+    textColor: fullWhite,
+    alternateTextColor: '#303030',
+    canvasColor: '#303030',
+    appBar: {
+      height: 50
+    }
+  }
 });
-
 
 class AppComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = props;
   }
+
   componentWillMount = () => injectTapEventPlugin();
   render() {
     const routes = this.props.routes;
@@ -56,14 +66,13 @@ class AppComponent extends React.Component {
         marginTop: '50px'
       }
     };
-    const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
-      userData: this.props.userData,
-    }));
+    const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {userData: this.props.userData}));
     console.log(this.props)
     let view = this.props.location.pathname.split('/');
     view = view[0];
-    let theme = muiTheme;
-    if (view === 'payment' || view === 'payment2') theme = custommuiTheme;
+    let theme = lightTheme;
+    if (view === 'payment' || view === 'payment2')
+      theme = darkTheme;
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(theme)}>
         <div>
@@ -76,7 +85,10 @@ class AppComponent extends React.Component {
 }
 
 AppComponent.defaultProps = {
-  userData: {users: users, paymentMethods: payments}
+  userData: {
+    users: users,
+    paymentMethods: payments
+  }
 };
 
 export default AppComponent;
