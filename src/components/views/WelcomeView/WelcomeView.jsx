@@ -40,7 +40,7 @@ class WelcomeViewComponent extends React.Component {
         top: 0,
         height: '100vh',
         width: '100vw',
-        backgroundColor: colors.white
+        backgroundColor: "#002888",
         // background: `linear-gradient(to bottom right, ${colors.white}, ${colors.light})`
       },
       wrapper: {
@@ -52,7 +52,7 @@ class WelcomeViewComponent extends React.Component {
         top: '40vh'
       },
       logo: {
-        color: colors.dark, // Transition from dark to base
+        color: "rgb(231,196,38)", // Transition from dark to base
         textAlign: 'center',
         fontFamily: 'Roboto, sans-serif',
         fontSize: '56pt',
@@ -76,7 +76,7 @@ class WelcomeViewComponent extends React.Component {
         marginLeft: '-5px',
         fontSize: '36pt',
         fontWeight: '100',
-        color: colors.dark,
+        color: "rgb(231,196,38)",
         transition: 'color 1s'
       }
     };
