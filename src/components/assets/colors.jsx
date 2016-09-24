@@ -10,7 +10,7 @@ var colors = {
   white: '#FFFCFC',
   offwhite: '#FFFDF7',
   shadow: 'rgba(0,0,0,.26)',
-  accent: 'rgb(231,196,38)',
+  accent: 'rgb(252,210,29)',
   highlight: '#e7bb41',
   success: '#3c763d',
   warning: '#66512c',

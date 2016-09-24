@@ -14,10 +14,10 @@ import payments from './payments.jsx';
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: "#002888",
-    primary2Color: "#002888",
-    secondaryColor: "#1a5eff",
-    accent1Color: "rgb(252,210,29)",
+    primary1Color: '#002888',
+    primary2Color: '#002888',
+    secondaryColor: '#1a5eff',
+    accent1Color: 'rgb(252,210,29)',
   },
   appBar: {
     height: 50,
@@ -26,8 +26,8 @@ const muiTheme = getMuiTheme({
 
 const custommuiTheme = getMuiTheme({
   palette: {
-        primary1Color: "002888",
-        primary2Color: "002888",
+        primary1Color: '#002888',
+        primary2Color: '#002888',
         primary3Color: grey600,
         accent1Color: pinkA200,
         accent2Color: pinkA400,

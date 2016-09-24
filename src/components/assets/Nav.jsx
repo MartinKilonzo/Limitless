@@ -35,13 +35,13 @@ class NavComponent extends React.Component {
         height: 'auto',
         width: 'auto',
         marginTop: '12px',
-        color: '#FFC107',
+        color: 'white',
         transition: 'color 0.8s',
         fontSize: '34px',
         cursor: 'pointer'
       }
     };
-    const fingerprint = <FingerprintLogo style={styles.fingerprint} highlight="white"></FingerprintLogo>;
+    const fingerprint = <FingerprintLogo style={styles.fingerprint} highlight={colors.accent}></FingerprintLogo>;
     return (
       <div>
         {true && <div>

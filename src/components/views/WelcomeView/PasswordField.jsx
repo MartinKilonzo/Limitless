@@ -17,7 +17,7 @@ class PasswordFieldComponent extends React.Component {
       form: {
         height: '100%',
         width: '80%',
-        color: colors.accent
+        color: 'white'
       },
       field: {
         height: '100%',
