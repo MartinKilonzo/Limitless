@@ -70,6 +70,7 @@
     "color-scheme": "0.0.5",
     "core-js": "^2.0.0",
     "material-ui": "^0.15.4",
+    "material-ui-number-input": "^5.0.8",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
     "react-bootstrap": "^0.30.3",

@@ -2,7 +2,7 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
-import Card from './Card.jsx';
+import Card from './AccountTypes/Card.jsx';
 import FingerprintLogo from '../WelcomeView/FingerprintLogo.jsx';
 import colors from '../../assets/colors.jsx';
 

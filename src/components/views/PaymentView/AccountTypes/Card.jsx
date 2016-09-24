@@ -2,16 +2,25 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import FontIcon from 'material-ui/FontIcon';
 
-import colors from '../../assets/colors.jsx';
+import colors from '../../../assets/colors.jsx';
 
-import rbclogo from '../../../images/rbclogo.png';
+import rbclogo from '../../../../images/rbclogo.png';
 
 class CardComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
+  }
+  highlightCard = (event) => {
+    const card = event.target;
+    this.setState({
+      bgColor: card.style.backgroundColor
+    }, () => {
+      card.style.backgroundColor = 'rgb(52,52,52)';
+    })
+  }
+  unHighlightCard = (event) => {
+    event.target.style.backgroundColor = this.state.bgColor || 'rgb(70,70,70)';
   }
   highlightButton = (event) => {
     event.target.style.color = colors.accent;
@@ -40,7 +49,8 @@ class CardComponent extends React.Component {
         flexDirection: 'column',
         justifyContent: 'space-between',
         height: '100%',
-        width: '100%'
+        width: '100%',
+        backgroundColor: 'inherit'
       },
       logoWrapper: {
         display: 'flex',
@@ -59,7 +69,8 @@ class CardComponent extends React.Component {
         marginTop: '-5px',
         marginLeft: '-5px',
         marginBottom: '5px',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        backgroundColor: 'inherit'
       },
       topWrapper: {
         display: 'flex',
@@ -93,7 +104,7 @@ class CardComponent extends React.Component {
       }
     };
     return (
-      <Paper style={styles.card} onClick={this.props.selectCard}>
+      <Paper style={styles.card} onMouseEnter={this.highlightCard} onMouseLeave={this.unHighlightCard} onClick={this.props.selectCard}>
         <div style={styles.wrapper}>
           <div style={styles.logoWrapper}>
             <FontIcon className="material-icons" style={styles.history} onMouseEnter={this.highlightButton} onMouseLeave={this.unHighlightButton} onClick={this.viewMore}>restore</FontIcon>
