@@ -6,10 +6,24 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {cyan500} from 'material-ui/styles/colors';
 
 import Nav from './Nav.jsx';
 import users from './users.jsx';
 import payments from './payments.jsx';
+
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: "#002888",
+    primary1Color: "#002888",
+    secondaryColor: "#1a5eff",
+    accent1Color: "rgb(252,210,29)",
+  },
+  appBar: {
+    height: 50,
+  },
+});
+
 
 class AppComponent extends React.Component {
   constructor(props) {
@@ -34,7 +48,7 @@ class AppComponent extends React.Component {
     console.log(this.props)
     let view = this.props.location.pathname.split('/');
     view = view[0];
-    let theme;
+    let theme = muiTheme;
     if (view === 'payment' || view === 'payment2') theme = darkBaseTheme;
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(theme)}>
