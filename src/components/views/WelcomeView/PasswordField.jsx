@@ -17,14 +17,14 @@ class PasswordFieldComponent extends React.Component {
       form: {
         height: '100%',
         width: '80%',
-        color: 'white'
+        color: colors.base
       },
       field: {
         height: '100%',
         width: '100%',
         backgroundColor: 'transparent',
         border: 'none',
-        boxShadow : '0 0 3px ' + colors.blue,
+        boxShadow : '0 0 3px ' + colors.accent,
         outlineColor: colors.accent,
         textAlign: 'center'
       },

@@ -16,7 +16,7 @@ import {
 } from 'material-ui/styles/colors';
 
 import Nav from './Nav.jsx';
-import users from './user.jsx';
+import users from './users.jsx';
 import payments from './payments.jsx';
 import DBQuery from './DBQuery.jsx';
 
@@ -86,8 +86,8 @@ class AppComponent extends React.Component {
 
 AppComponent.defaultProps = {
   userData: {
-    users: DBQuery.getUsers(),
-    // paymentMethods: DBQuery.getPayments()
+    users: users,
+    paymentMethods: payments
   }
 };
 

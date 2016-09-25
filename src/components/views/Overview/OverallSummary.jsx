@@ -137,6 +137,7 @@ class OverallSummaryComponent extends React.Component {
         flexDirection: 'column'
       },
       label: {
+        fontFamily: 'Roboto, sans',
         fontWeight: 500
       },
       graphWrapper: {
@@ -158,10 +159,10 @@ class OverallSummaryComponent extends React.Component {
         <div style={styles.wrapper}>
           <div style={styles.labelWrapper}>
             <div style={styles.unitWrapper}>
-              <h1 style={styles.label}>{this.props.label}</h1>
+              <h1 style={styles.label}>Welcome to your dashboard.</h1>
             </div>
             <div style={styles.totalWrapper}>
-              Cash: {this.state.totalSpend}
+              Your current cash: {this.state.totalSpend}
             </div>
           </div>
           <div style={styles.graphWrapper}>

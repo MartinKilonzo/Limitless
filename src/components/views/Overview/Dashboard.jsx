@@ -37,6 +37,7 @@ class Dashboard extends React.Component {
   }
   getDataBy = (criteria, dataToSort) => {
     let users = dataToSort || this.props.userData.users;
+console.log(users)
     let sumCategories = {};
     users.forEach(user => {
       let sum = 0;
@@ -101,6 +102,7 @@ class Dashboard extends React.Component {
       byPerson: this.getDataBy('firstName', this.filterDataBy('department', this.props.params.department)),
       cashPosition: this.getCashPosition()
     };
+    console.log(chartData);
     const styles = {
       wrapper: {
         paddingTop: '6%',

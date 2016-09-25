@@ -1,614 +1,692 @@
-let users = {
-    "firstName": "Katherine",
-    "lastName": "Carter",
-    "department": "Operations",
-    "hasAdminAccess": "false",
-    "paymentsMethods": [{
-        "paymentType": 0,
-        "transactions": [{
-            "when": "2017/5/4",
-            "to": "Kathy Harper",
-            "value": "64"
-        }, {
-            "when": "2017/6/21",
-            "to": "Brenda Myers",
-            "value": "61"
-        }, {
-            "when": "2017/12/21",
-            "to": "Mildred Myers",
-            "value": "36"
-        }, {
-            "when": "2017/4/5",
-            "to": "Stephen Powell",
-            "value": "92"
-        }, {
-            "when": "2017/11/22",
-            "to": "Theresa Williams",
-            "value": "95"
-        }, {
-            "when": "2017/12/2",
-            "to": "Anne Fuller",
-            "value": "69"
-        }],
-        "balance": "417",
-        "limit": 964
-    }, {
-        "paymentType": "checking",
-        "transactions": [{
-            "when": "2017/8/11",
-            "to": "Teresa Reed",
-            "value": "11"
-        }, {
-            "when": "2017/3/9",
-            "to": "Carolyn Austin",
-            "value": "41"
-        }, {
-            "when": "2017/8/4",
-            "to": "Dorothy Price",
-            "value": "44"
-        }, {
-            "when": "2017/11/8",
-            "to": "Bruce Cook",
-            "value": "23"
-        }],
-        "balance": "536",
-        "limit": 1492
-    }]
-}, {
-    "firstName": "Julie",
-    "lastName": "Walker",
-    "department": "Operations",
-    "hasAdminAccess": "false",
-    "paymentsMethods": [{
-        "paymentType": 0,
-        "transactions": [{
-            "when": "2017/7/14",
-            "to": "John Weaver",
-            "value": "42"
-        }, {
-            "when": "2017/5/24",
-            "to": "Beverly Little",
-            "value": "90"
-        }],
-        "balance": "132",
-        "limit": 564
-    }, {
-        "paymentType": "checking",
-        "transactions": [{
-            "when": "2017/3/7",
-            "to": "Jean Mendoza",
-            "value": "48"
-        }, {
-            "when": "2017/10/24",
-            "to": "Lori Dunn",
-            "value": "56"
-        }],
-        "balance": "236",
-        "limit": 882
-    }]
-}, {
-    "firstName": "Charles",
-    "lastName": "Allen",
-    "department": "Finance",
-    "hasAdminAccess": "false",
-    "paymentsMethods": [{
-        "paymentType": 0,
-        "transactions": [{
-            "when": "2017/4/2",
-            "to": "Paula Gomez",
-            "value": "38"
-        }, {
-            "when": "2017/3/8",
-            "to": "Julie Adams",
-            "value": "33"
-        }, {
-            "when": "2017/12/15",
-            "to": "Kathy Evans",
-            "value": "30"
-        }, {
-            "when": "2017/10/7",
-            "to": "Carolyn Hughes",
-            "value": "21"
-        }, {
-            "when": "2017/6/25",
-            "to": "Anthony Riley",
-            "value": "29"
-        }, {
-            "when": "2017/6/24",
-            "to": "Sara Perez",
-            "value": "86"
-        }],
-        "balance": "237",
-        "limit": 1384
-    }, {
-        "paymentType": "checking",
-        "transactions": [{
-            "when": "2017/1/6",
-            "to": "Christina Greene",
-            "value": "74"
-        }, {
-            "when": "2017/12/3",
-            "to": "Louise Cole",
-            "value": "41"
-        }, {
-            "when": "2017/5/17",
-            "to": "Jack Miller",
-            "value": "91"
-        }],
-        "balance": "443",
-        "limit": 966
-    }]
-}, {
-    "firstName": "Bruce",
-    "lastName": "Harvey",
-    "department": "Finance",
-    "hasAdminAccess": "false",
-    "paymentsMethods": [{
-        "paymentType": 0,
-        "transactions": [{
-            "when": "2017/6/10",
-            "to": "Elizabeth King",
-            "value": "21"
-        }, {
-            "when": "2017/1/23",
-            "to": "Beverly Long",
-            "value": "30"
-        }, {
-            "when": "2017/10/19",
-            "to": "Kimberly Lynch",
-            "value": "62"
-        }, {
-            "when": "2017/12/11",
-            "to": "Joe Campbell",
-            "value": "37"
-        }, {
-            "when": "2017/9/9",
-            "to": "David Adams",
-            "value": "2"
-        }],
-        "balance": "152",
-        "limit": 814
-    }, {
-        "paymentType": "checking",
-        "transactions": [{
-            "when": "2017/9/25",
-            "to": "Antonio Phillips",
-            "value": "21"
-        }, {
-            "when": "2017/1/25",
-            "to": "Dorothy Reyes",
-            "value": "81"
-        }, {
-            "when": "2017/7/4",
-            "to": "Clarence Williams",
-            "value": "38"
-        }],
-        "balance": "292",
-        "limit": 594
-    }]
-}, {
-    "firstName": "Matthew",
-    "lastName": "Myers",
-    "department": "Finance",
-    "hasAdminAccess": "false",
-    "paymentsMethods": [{
-        "paymentType": 0,
-        "transactions": [{
-            "when": "2017/1/9",
-            "to": "Roy Webb",
-            "value": "10"
-        }, {
-            "when": "2017/6/14",
-            "to": "Benjamin Reed",
-            "value": "16"
-        }, {
-            "when": "2017/12/2",
-            "to": "Kimberly Grant",
-            "value": "19"
-        }, {
-            "when": "2017/9/24",
-            "to": "Bobby Campbell",
-            "value": "8"
-        }, {
-            "when": "2017/1/10",
-            "to": "Bobby Lopez",
-            "value": "95"
-        }],
-        "balance": "148",
-        "limit": 1156
-    }, {
-        "paymentType": "checking",
-        "transactions": [{
-            "when": "2017/4/24",
-            "to": "Richard Mason",
-            "value": "3"
-        }, {
-            "when": "2017/9/1",
-            "to": "Kathy Williams",
-            "value": "80"
-        }, {
-            "when": "2017/9/24",
-            "to": "Brenda Rogers",
-            "value": "98"
-        }, {
-            "when": "2017/2/8",
-            "to": "Anthony Moreno",
-            "value": "38"
-        }, {
-            "when": "2017/5/14",
-            "to": "Matthew Ramos",
-            "value": "57"
-        }],
-        "balance": "424",
-        "limit": 1438
-    }]
-}, {
-    "firstName": "Joseph",
-    "lastName": "Reed",
-    "department": "Operations",
-    "hasAdminAccess": "false",
-    "paymentsMethods": [{
-        "paymentType": 0,
-        "transactions": [{
-            "when": "2017/3/10",
-            "to": "Anthony Greene",
-            "value": "28"
-        }, {
-            "when": "2017/3/13",
-            "to": "Harold Roberts",
-            "value": "33"
-        }, {
-            "when": "2017/2/18",
-            "to": "Andrea Rose",
-            "value": "81"
-        }],
-        "balance": "142",
-        "limit": 1274
-    }, {
-        "paymentType": "checking",
-        "transactions": [{
-            "when": "2017/4/22",
-            "to": "Clarence Harvey",
-            "value": "76"
-        }, {
-            "when": "2017/5/15",
-            "to": "Julie Perez",
-            "value": "0"
-        }, {
-            "when": "2017/3/4",
-            "to": "Phyllis George",
-            "value": "88"
-        }, {
-            "when": "2017/10/15",
-            "to": "Christine Dean",
-            "value": "2"
-        }],
-        "balance": "308",
-        "limit": 1476
-    }]
-}, {
-    "firstName": "Sean",
-    "lastName": "George",
-    "department": "Operations",
-    "hasAdminAccess": "false",
-    "paymentsMethods": [{
-        "paymentType": 0,
-        "transactions": [{
-            "when": "2017/10/8",
-            "to": "Deborah Edwards",
-            "value": "54"
-        }, {
-            "when": "2017/6/15",
-            "to": "Jeremy Burton",
-            "value": "68"
-        }, {
-            "when": "2017/1/1",
-            "to": "Christine Romero",
-            "value": "49"
-        }, {
-            "when": "2017/2/13",
-            "to": "Melissa Lee",
-            "value": "18"
-        }],
-        "balance": "189",
-        "limit": 918
-    }, {
-        "paymentType": "checking",
-        "transactions": [{
-            "when": "2017/4/5",
-            "to": "Harold Romero",
-            "value": "29"
-        }, {
-            "when": "2017/2/13",
-            "to": "Charles Grant",
-            "value": "93"
-        }, {
-            "when": "2017/12/23",
-            "to": "Theresa Hughes",
-            "value": "5"
-        }, {
-            "when": "2017/9/8",
-            "to": "Christine Romero",
-            "value": "14"
-        }, {
-            "when": "2017/2/17",
-            "to": "Anne Hughes",
-            "value": "63"
-        }, {
-            "when": "2017/6/6",
-            "to": "Brenda Powell",
-            "value": "12"
-        }],
-        "balance": "405",
-        "limit": 900
-    }]
-}, {
-    "firstName": "Deborah",
-    "lastName": "Chavez",
-    "department": "Finance",
-    "hasAdminAccess": "false",
-    "paymentsMethods": [{
-        "paymentType": 0,
-        "transactions": [{
-            "when": "2017/11/22",
-            "to": "Sean Brown",
-            "value": "44"
-        }, {
-            "when": "2017/1/23",
-            "to": "Julie George",
-            "value": "35"
-        }, {
-            "when": "2017/3/24",
-            "to": "Charles Woods",
-            "value": "59"
-        }],
-        "balance": "138",
-        "limit": 1206
-    }, {
-        "paymentType": "checking",
-        "transactions": [{
-            "when": "2017/10/25",
-            "to": "Katherine Brown",
-            "value": "45"
-        }, {
-            "when": "2017/10/12",
-            "to": "Jessica Stanley",
-            "value": "22"
-        }, {
-            "when": "2017/9/19",
-            "to": "Richard Little",
-            "value": "58"
-        }, {
-            "when": "2017/12/3",
-            "to": "David Banks",
-            "value": "14"
-        }, {
-            "when": "2017/3/25",
-            "to": "Rachel Stanley",
-            "value": "72"
-        }, {
-            "when": "2017/12/9",
-            "to": "Theresa Romero",
-            "value": "97"
-        }],
-        "balance": "446",
-        "limit": 1082
-    }]
-}, {
-    "firstName": "Paul",
-    "lastName": "Morrison",
-    "department": "Finance",
-    "hasAdminAccess": "false",
-    "paymentsMethods": [{
-        "paymentType": 0,
-        "transactions": [{
-            "when": "2017/9/11",
-            "to": "Stephen White",
-            "value": "13"
-        }, {
-            "when": "2017/8/3",
-            "to": "Clarence Myers",
-            "value": "25"
-        }, {
-            "when": "2017/8/25",
-            "to": "Paula Mccoy",
-            "value": "61"
-        }, {
-            "when": "2017/10/4",
-            "to": "Deborah Little",
-            "value": "93"
-        }, {
-            "when": "2017/10/7",
-            "to": "Nicholas Tucker",
-            "value": "22"
-        }],
-        "balance": "214",
-        "limit": 1298
-    }, {
-        "paymentType": "checking",
-        "transactions": [{
-            "when": "2017/5/13",
-            "to": "Randy Fisher",
-            "value": "74"
-        }, {
-            "when": "2017/3/21",
-            "to": "Billy Green",
-            "value": "11"
-        }, {
-            "when": "2017/9/22",
-            "to": "Christina George",
-            "value": "50"
-        }, {
-            "when": "2017/9/20",
-            "to": "David Campbell",
-            "value": "19"
-        }, {
-            "when": "2017/2/2",
-            "to": "Teresa King",
-            "value": "2"
-        }, {
-            "when": "2017/8/17",
-            "to": "Sandra Mendoza",
-            "value": "51"
-        }],
-        "balance": "421",
-        "limit": 1692
-    }]
-}, {
-    "firstName": "Craig",
-    "lastName": "Austin",
-    "department": "Finance",
-    "hasAdminAccess": "false",
-    "paymentsMethods": [{
-        "paymentType": 0,
-        "transactions": [{
-            "when": "2017/4/11",
-            "to": "Fred Brown",
-            "value": "57"
-        }, {
-            "when": "2017/11/16",
-            "to": "Jeremy Myers",
-            "value": "43"
-        }],
-        "balance": "100",
-        "limit": 790
-    }, {
-        "paymentType": "checking",
-        "transactions": [{
-            "when": "2017/10/8",
-            "to": "Harold Ford",
-            "value": "87"
-        }, {
-            "when": "2017/10/25",
-            "to": "David Myers",
-            "value": "29"
-        }, {
-            "when": "2017/9/24",
-            "to": "Antonio Lopez",
-            "value": "62"
-        }, {
-            "when": "2017/4/22",
-            "to": "Bruce George",
-            "value": "95"
-        }, {
-            "when": "2017/6/15",
-            "to": "Randy Lopez",
-            "value": "16"
-        }, {
-            "when": "2017/3/2",
-            "to": "Michael Walker",
-            "value": "11"
-        }],
-        "balance": "400",
-        "limit": 1280
-    }]
-}, {
-    "firstName": "Dorothy",
-    "lastName": "Barnes",
-    "department": "Marketing",
-    "hasAdminAccess": "false",
-    "paymentsMethods": [{
-        "paymentType": 0,
-        "transactions": [{
-            "when": "2017/8/16",
-            "to": "Michael Harper",
-            "value": "29"
-        }, {
-            "when": "2017/1/14",
-            "to": "Kathy Walker",
-            "value": "65"
-        }, {
-            "when": "2017/12/3",
-            "to": "Kimberly King",
-            "value": "39"
-        }, {
-            "when": "2017/12/11",
-            "to": "Patricia Campbell",
-            "value": "77"
-        }, {
-            "when": "2017/9/14",
-            "to": "Richard James",
-            "value": "50"
-        }],
-        "balance": "260",
-        "limit": 1130
-    }, {
-        "paymentType": "checking",
-        "transactions": [{
-            "when": "2017/10/10",
-            "to": "Heather Weaver",
-            "value": "11"
-        }, {
-            "when": "2017/1/11",
-            "to": "Dorothy Mccoy",
-            "value": "50"
-        }, {
-            "when": "2017/8/11",
-            "to": "Dorothy Rose",
-            "value": "26"
-        }, {
-            "when": "2017/10/2",
-            "to": "Patricia Gomez",
-            "value": "71"
-        }, {
-            "when": "2017/2/12",
-            "to": "Harold Moreno",
-            "value": "17"
-        }],
-        "balance": "435",
-        "limit": 1000
-    }]
-}, {
-    "firstName": "Phyllis",
-    "lastName": "Phillips",
-    "department": "Finance",
-    "hasAdminAccess": "false",
-    "paymentsMethods": [{
-        "paymentType": 0,
-        "transactions": [{
-            "when": "2017/10/5",
-            "to": "Donald Cook",
-            "value": "32"
-        }, {
-            "when": "2017/1/6",
-            "to": "Dorothy Harper",
-            "value": "84"
-        }, {
-            "when": "2017/11/5",
-            "to": "Anthony Harvey",
-            "value": "69"
-        }, {
-            "when": "2017/9/14",
-            "to": "Roy Gray",
-            "value": "11"
-        }, {
-            "when": "2017/8/18",
-            "to": "Albert Roberts",
-            "value": "38"
-        }],
-        "balance": "234",
-        "limit": 708
-    }, {
-        "paymentType": "checking",
-        "transactions": [{
-            "when": "2017/7/12",
-            "to": "Katherine Roberts",
-            "value": "59"
-        }, {
-            "when": "2017/6/22",
-            "to": "Theresa Cole",
-            "value": "34"
-        }, {
-            "when": "2017/2/9",
-            "to": "Louise Fung",
-            "value": "79"
-        }, {
-            "when": "2017/10/19",
-            "to": "Rachel Gomez",
-            "value": "34"
-        }],
-        "balance": "440",
-        "limit": 1450
-    }]
-}
- module.exports = users;
+let getRandomDate = () => {
+  return new Date(2016, Math.round(Math.random() * 12), 1 + Math.round(Math.random() * 31))
+};
+let users = [
+  {
+    firstName: 'Katherine',
+    lastName: 'Carter',
+    department: 'Operations',
+    hasAdminAccess: false,
+    paymentMethods: [
+      {
+        paymentType: 0,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Kathy Harper',
+            amount: 64
+          }, {
+            date: getRandomDate(),
+            recipient: 'Brenda Myers',
+            amount: 61
+          }, {
+            date: getRandomDate(),
+            recipient: 'Mildred Myers',
+            amount: 36
+          }, {
+            date: getRandomDate(),
+            recipient: 'Stephen Powell',
+            amount: 92
+          }, {
+            date: getRandomDate(),
+            recipient: 'Theresa Williams',
+            amount: 95
+          }, {
+            date: getRandomDate(),
+            recipient: 'Anne Fuller',
+            amount: 69
+          }
+        ],
+        balance: 417,
+        limit: 964 - 800
+      }, {
+        paymentType: 1,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Teresa Reed',
+            amount: 11
+          }, {
+            date: getRandomDate(),
+            recipient: 'Carolyn Austin',
+            amount: 41
+          }, {
+            date: getRandomDate(),
+            recipient: 'Dorothy Price',
+            amount: 44
+          }, {
+            date: getRandomDate(),
+            recipient: 'Bruce Cook',
+            amount: 23
+          }
+        ],
+        balance: 536,
+        limit: 1492 - 800
+      }
+    ]
+  }, {
+    firstName: 'Julie',
+    lastName: 'Walker',
+    department: 'Operations',
+    hasAdminAccess: false,
+    paymentMethods: [
+      {
+        paymentType: 0,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'John Weaver',
+            amount: 42
+          }, {
+            date: getRandomDate(),
+            recipient: 'Beverly Little',
+            amount: 90
+          }
+        ],
+        balance: 132,
+        limit: 564 - 800
+      }, {
+        paymentType: 1,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Jean Mendoza',
+            amount: 48
+          }, {
+            date: getRandomDate(),
+            recipient: 'Lori Dunn',
+            amount: 56
+          }
+        ],
+        balance: 236,
+        limit: 882 - 800
+      }
+    ]
+  }, {
+    firstName: 'Charles',
+    lastName: 'Allen',
+    department: 'Finance',
+    hasAdminAccess: false,
+    paymentMethods: [
+      {
+        paymentType: 0,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Paula Gomez',
+            amount: 38
+          }, {
+            date: getRandomDate(),
+            recipient: 'Julie Adams',
+            amount: 33
+          }, {
+            date: getRandomDate(),
+            recipient: 'Kathy Evans',
+            amount: 30
+          }, {
+            date: getRandomDate(),
+            recipient: 'Carolyn Hughes',
+            amount: 21
+          }, {
+            date: getRandomDate(),
+            recipient: 'Anthony Riley',
+            amount: 29
+          }, {
+            date: getRandomDate(),
+            recipient: 'Sara Perez',
+            amount: 86
+          }
+        ],
+        balance: 237,
+        limit: 1384 - 800
+      }, {
+        paymentType: 1,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Christina Greene',
+            amount: 74
+          }, {
+            date: getRandomDate(),
+            recipient: 'Louise Cole',
+            amount: 41
+          }, {
+            date: getRandomDate(),
+            recipient: 'Jack Miller',
+            amount: 91
+          }
+        ],
+        balance: 443,
+        limit: 966 - 800
+      }
+    ]
+  }, {
+    firstName: 'Bruce',
+    lastName: 'Harvey',
+    department: 'Finance',
+    hasAdminAccess: false,
+    paymentMethods: [
+      {
+        paymentType: 0,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Elizabeth King',
+            amount: 21
+          }, {
+            date: getRandomDate(),
+            recipient: 'Beverly Long',
+            amount: 30
+          }, {
+            date: getRandomDate(),
+            recipient: 'Kimberly Lynch',
+            amount: 62
+          }, {
+            date: getRandomDate(),
+            recipient: 'Joe Campbell',
+            amount: 37
+          }, {
+            date: getRandomDate(),
+            recipient: 'David Adams',
+            amount: 2
+          }
+        ],
+        balance: 152,
+        limit: 814 - 800
+      }, {
+        paymentType: 1,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Antonio Phillips',
+            amount: 21
+          }, {
+            date: getRandomDate(),
+            recipient: 'Dorothy Reyes',
+            amount: 81
+          }, {
+            date: getRandomDate(),
+            recipient: 'Clarence Williams',
+            amount: 38
+          }
+        ],
+        balance: 292,
+        limit: 594 - 800
+      }
+    ]
+  }, {
+    firstName: 'Matthew',
+    lastName: 'Myers',
+    department: 'Finance',
+    hasAdminAccess: false,
+    paymentMethods: [
+      {
+        paymentType: 0,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Roy Webb',
+            amount: 10
+          }, {
+            date: getRandomDate(),
+            recipient: 'Benjamin Reed',
+            amount: 16
+          }, {
+            date: getRandomDate(),
+            recipient: 'Kimberly Grant',
+            amount: 19
+          }, {
+            date: getRandomDate(),
+            recipient: 'Bobby Campbell',
+            amount: 8
+          }, {
+            date: getRandomDate(),
+            recipient: 'Bobby Lopez',
+            amount: 95
+          }
+        ],
+        balance: 148,
+        limit: 1156 - 800
+      }, {
+        paymentType: 1,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Richard Mason',
+            amount: 3
+          }, {
+            date: getRandomDate(),
+            recipient: 'Kathy Williams',
+            amount: 80
+          }, {
+            date: getRandomDate(),
+            recipient: 'Brenda Rogers',
+            amount: 98
+          }, {
+            date: getRandomDate(),
+            recipient: 'Anthony Moreno',
+            amount: 38
+          }, {
+            date: getRandomDate(),
+            recipient: 'Matthew Ramos',
+            amount: 57
+          }
+        ],
+        balance: 424,
+        limit: 1438 - 800
+      }
+    ]
+  }, {
+    firstName: 'Joseph',
+    lastName: 'Reed',
+    department: 'Operations',
+    hasAdminAccess: false,
+    paymentMethods: [
+      {
+        paymentType: 0,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Anthony Greene',
+            amount: 28
+          }, {
+            date: getRandomDate(),
+            recipient: 'Harold Roberts',
+            amount: 33
+          }, {
+            date: getRandomDate(),
+            recipient: 'Andrea Rose',
+            amount: 81
+          }
+        ],
+        balance: 142,
+        limit: 1274 - 800
+      }, {
+        paymentType: 1,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Clarence Harvey',
+            amount: 76
+          }, {
+            date: getRandomDate(),
+            recipient: 'Julie Perez',
+            amount: 0
+          }, {
+            date: getRandomDate(),
+            recipient: 'Phyllis George',
+            amount: 88
+          }, {
+            date: getRandomDate(),
+            recipient: 'Christine Dean',
+            amount: 2
+          }
+        ],
+        balance: 308,
+        limit: 1476 - 800
+      }
+    ]
+  }, {
+    firstName: 'Sean',
+    lastName: 'George',
+    department: 'Operations',
+    hasAdminAccess: false,
+    paymentMethods: [
+      {
+        paymentType: 0,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Deborah Edwards',
+            amount: 54
+          }, {
+            date: getRandomDate(),
+            recipient: 'Jeremy Burton',
+            amount: 68
+          }, {
+            date: getRandomDate(),
+            recipient: 'Christine Romero',
+            amount: 49
+          }, {
+            date: getRandomDate(),
+            recipient: 'Melissa Lee',
+            amount: 18
+          }
+        ],
+        balance: 189,
+        limit: 918 - 800
+      }, {
+        paymentType: 1,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Harold Romero',
+            amount: 29
+          }, {
+            date: getRandomDate(),
+            recipient: 'Charles Grant',
+            amount: 93
+          }, {
+            date: getRandomDate(),
+            recipient: 'Theresa Hughes',
+            amount: 5
+          }, {
+            date: getRandomDate(),
+            recipient: 'Christine Romero',
+            amount: 14
+          }, {
+            date: getRandomDate(),
+            recipient: 'Anne Hughes',
+            amount: 63
+          }, {
+            date: getRandomDate(),
+            recipient: 'Brenda Powell',
+            amount: 12
+          }
+        ],
+        balance: 405,
+        limit: 900 - 800
+      }
+    ]
+  }, {
+    firstName: 'Deborah',
+    lastName: 'Chavez',
+    department: 'Finance',
+    hasAdminAccess: false,
+    paymentMethods: [
+      {
+        paymentType: 0,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Sean Brown',
+            amount: 44
+          }, {
+            date: getRandomDate(),
+            recipient: 'Julie George',
+            amount: 35
+          }, {
+            date: getRandomDate(),
+            recipient: 'Charles Woods',
+            amount: 59
+          }
+        ],
+        balance: 138,
+        limit: 1206 - 800
+      }, {
+        paymentType: 1,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Katherine Brown',
+            amount: 45
+          }, {
+            date: getRandomDate(),
+            recipient: 'Jessica Stanley',
+            amount: 22
+          }, {
+            date: getRandomDate(),
+            recipient: 'Richard Little',
+            amount: 58
+          }, {
+            date: getRandomDate(),
+            recipient: 'David Banks',
+            amount: 14
+          }, {
+            date: getRandomDate(),
+            recipient: 'Rachel Stanley',
+            amount: 72
+          }, {
+            date: getRandomDate(),
+            recipient: 'Theresa Romero',
+            amount: 97
+          }
+        ],
+        balance: 446,
+        limit: 1082 - 800
+      }
+    ]
+  }, {
+    firstName: 'Paul',
+    lastName: 'Morrison',
+    department: 'Finance',
+    hasAdminAccess: false,
+    paymentMethods: [
+      {
+        paymentType: 0,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Stephen White',
+            amount: 13
+          }, {
+            date: getRandomDate(),
+            recipient: 'Clarence Myers',
+            amount: 25
+          }, {
+            date: getRandomDate(),
+            recipient: 'Paula Mccoy',
+            amount: 61
+          }, {
+            date: getRandomDate(),
+            recipient: 'Deborah Little',
+            amount: 93
+          }, {
+            date: getRandomDate(),
+            recipient: 'Nicholas Tucker',
+            amount: 22
+          }
+        ],
+        balance: 214,
+        limit: 1298 - 800
+      }, {
+        paymentType: 1,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Randy Fisher',
+            amount: 74
+          }, {
+            date: getRandomDate(),
+            recipient: 'Billy Green',
+            amount: 11
+          }, {
+            date: getRandomDate(),
+            recipient: 'Christina George',
+            amount: 50
+          }, {
+            date: getRandomDate(),
+            recipient: 'David Campbell',
+            amount: 19
+          }, {
+            date: getRandomDate(),
+            recipient: 'Teresa King',
+            amount: 2
+          }, {
+            date: getRandomDate(),
+            recipient: 'Sandra Mendoza',
+            amount: 51
+          }
+        ],
+        balance: 421,
+        limit: 1692 - 800
+      }
+    ]
+  }, {
+    firstName: 'Craig',
+    lastName: 'Austin',
+    department: 'Finance',
+    hasAdminAccess: false,
+    paymentMethods: [
+      {
+        paymentType: 0,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Fred Brown',
+            amount: 57
+          }, {
+            date: getRandomDate(),
+            recipient: 'Jeremy Myers',
+            amount: 43
+          }
+        ],
+        balance: 100,
+        limit: 790 - 800
+      }, {
+        paymentType: 1,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Harold Ford',
+            amount: 87
+          }, {
+            date: getRandomDate(),
+            recipient: 'David Myers',
+            amount: 29
+          }, {
+            date: getRandomDate(),
+            recipient: 'Antonio Lopez',
+            amount: 62
+          }, {
+            date: getRandomDate(),
+            recipient: 'Bruce George',
+            amount: 95
+          }, {
+            date: getRandomDate(),
+            recipient: 'Randy Lopez',
+            amount: 16
+          }, {
+            date: getRandomDate(),
+            recipient: 'Michael Walker',
+            amount: 11
+          }
+        ],
+        balance: 400,
+        limit: 1280 - 800
+      }
+    ]
+  }, {
+    firstName: 'Dorothy',
+    lastName: 'Barnes',
+    department: 'marketing',
+    hasAdminAccess: false,
+    paymentMethods: [
+      {
+        paymentType: 0,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Michael Harper',
+            amount: 29
+          }, {
+            date: getRandomDate(),
+            recipient: 'Kathy Walker',
+            amount: 65
+          }, {
+            date: getRandomDate(),
+            recipient: 'Kimberly King',
+            amount: 39
+          }, {
+            date: getRandomDate(),
+            recipient: 'Patricia Campbell',
+            amount: 77
+          }, {
+            date: getRandomDate(),
+            recipient: 'Richard James',
+            amount: 50
+          }
+        ],
+        balance: 260,
+        limit: 1130 - 800
+      }, {
+        paymentType: 1,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Heather Weaver',
+            amount: 11
+          }, {
+            date: getRandomDate(),
+            recipient: 'Dorothy Mccoy',
+            amount: 50
+          }, {
+            date: getRandomDate(),
+            recipient: 'Dorothy Rose',
+            amount: 26
+          }, {
+            date: getRandomDate(),
+            recipient: 'Patricia Gomez',
+            amount: 71
+          }, {
+            date: getRandomDate(),
+            recipient: 'Harold Moreno',
+            amount: 17
+          }
+        ],
+        balance: 435,
+        limit: 1000 - 800
+      }
+    ]
+  }, {
+    firstName: 'Phyllis',
+    lastName: 'Phillips',
+    department: 'Finance',
+    hasAdminAccess: false,
+    paymentMethods: [
+      {
+        paymentType: 0,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Donald Cook',
+            amount: 32
+          }, {
+            date: getRandomDate(),
+            recipient: 'Dorothy Harper',
+            amount: 84
+          }, {
+            date: getRandomDate(),
+            recipient: 'Anthony Harvey',
+            amount: 69
+          }, {
+            date: getRandomDate(),
+            recipient: 'Roy Gray',
+            amount: 11
+          }, {
+            date: getRandomDate(),
+            recipient: 'Albert Roberts',
+            amount: 38
+          }
+        ],
+        balance: 234,
+        limit: 708 - 800
+      }, {
+        paymentType: 1,
+        transactionHistory: [
+          {
+            date: getRandomDate(),
+            recipient: 'Katherine Roberts',
+            amount: 59
+          }, {
+            date: getRandomDate(),
+            recipient: 'Theresa Cole',
+            amount: 34
+          }, {
+            date: getRandomDate(),
+            recipient: 'Louise Fung',
+            amount: 79
+          }, {
+            date: getRandomDate(),
+            recipient: 'Rachel Gomez',
+            amount: 34
+          }
+        ],
+        balance: 440,
+        limit: 1450 - 800
+      }
+    ]
+  }
+];
+
+module.exports = users;

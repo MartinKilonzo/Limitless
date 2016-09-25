@@ -24,12 +24,12 @@ class WelcomeViewComponent extends React.Component {
     wrapper.style.width = document.getElementById('logo').offsetWidth + 'px';
   }
   highlightFingerPrintLogo() {
-    const style = document.getElementById('fingerprint').style;
-    style.color = colors.accent;
+    // const style = document.getElementById('fingerprint').style;
+    // style.color = colors.accent;
   }
   unHighlightFingerPrintLogo() {
-    const style = document.getElementById('fingerprint').style;
-    style.color = colors.dark;
+    // const style = document.getElementById('fingerprint').style;
+    // style.color = colors.dark;
   }
   render() {
     //TODO: User toggle for disableing the sequence near bottom corner
@@ -40,7 +40,7 @@ class WelcomeViewComponent extends React.Component {
         top: 0,
         height: '100vh',
         width: '100vw',
-        backgroundColor: "#002888",
+        backgroundColor: "white",
         // background: `linear-gradient(to bottom right, ${colors.white}, ${colors.light})`
       },
       wrapper: {
@@ -52,7 +52,7 @@ class WelcomeViewComponent extends React.Component {
         top: '40vh'
       },
       logo: {
-        color: "white", // Transition from dark to base
+        color: "#002888", // Transition from dark to base
         textAlign: 'center',
         fontFamily: 'Roboto, sans-serif',
         fontSize: '56pt',
@@ -84,8 +84,7 @@ class WelcomeViewComponent extends React.Component {
     return (
       <div style={styles.background}>
         <div style={styles.wrapper}>
-          <span id="logo" style={styles.logo} onMouseOver={this.highlightFingerPrintLogo} onMouseLeave={this.unHighlightFingerPrintLogo}>Touch t<FingerPrintLogo id="fingerprint" style={styles.fingerprint} highlight={colors.accent}></FingerPrintLogo>
-            Pay</span>
+          <span id="logo" style={styles.logo} onMouseOver={this.highlightFingerPrintLogo} onMouseLeave={this.unHighlightFingerPrintLogo}>Limitless</span>
           <div id="buttonWrapper" style={styles.buttonWrapper}>
             <Password callback={this.highlightFingerPrintLogo}></Password>
           </div>

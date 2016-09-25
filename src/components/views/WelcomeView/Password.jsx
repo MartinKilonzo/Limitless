@@ -21,14 +21,12 @@ class PasswordComponent extends React.Component {
   highlight(event) {
     const style = event.target.style;
     style.fontWeight = 400;
-    style.color = colors.accent;
     event.target.style.boxShadow = '0px 1px 2px ' +
       'white';
   }
   unHighlight(event) {
     const style = event.target.style;
     style.fontWeight = 300;
-    style.color = colors.base;
     event.target.style.boxShadow = 'none';
   }
   render() {
@@ -47,7 +45,7 @@ class PasswordComponent extends React.Component {
         marginRight: '5px',
         textAlign: 'center',
         backgroundColor: 'white',
-        color: colors.base,
+        color: colors.accent,
         fontWeight: 300,
         textDecoration: 'none',
         transition: '0.13s',
