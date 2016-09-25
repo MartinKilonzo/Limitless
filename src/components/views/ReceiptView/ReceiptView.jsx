@@ -27,7 +27,6 @@ var NewComponent = React.createClass({
         <h1 id = "upload" style={styles.upload}>Upload new File</h1>
         <form action="http://127.0.0.1:5000/upload" method="post" encType="multipart/form-data" style={styles.uploadBut}>
         <input style={styles.foo} type="file" name="file" />
-        <div>    </div>
         <input style={styles.btn} type="submit" defaultValue="Upload" />
         </form>
       </div>
