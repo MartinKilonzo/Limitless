@@ -67,7 +67,6 @@ class AppComponent extends React.Component {
       }
     };
     const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {userData: this.props.userData}));
-    console.log(this.props)
     let view = this.props.location.pathname.split('/');
     view = view[0];
     let theme = lightTheme;

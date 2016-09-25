@@ -34,7 +34,6 @@ class OverallSummaryComponent extends React.Component {
     return '$' + ret;
   }
   render() {
-
     const balances = this.props.data.balance.data;
     let remainingData = this.props.data.limits;
     for (var department in balances) {
@@ -80,7 +79,7 @@ class OverallSummaryComponent extends React.Component {
         display: false
       },
       legend: {
-        display: true,
+        display: false,
         position: 'bottom',
         onClick: this.props.redirect
       },

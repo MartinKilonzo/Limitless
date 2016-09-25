@@ -121,7 +121,7 @@ let users = [
   }, {
     firstName: 'Charles',
     lastName: 'Allen',
-    department: 'finance',
+    department: 'sales',
     hasAdminAccess: false,
     picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
@@ -180,7 +180,7 @@ let users = [
   }, {
     firstName: 'Bruce',
     lastName: 'Harvey',
-    department: 'finance',
+    department: 'sales',
     hasAdminAccess: false,
     picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
@@ -235,7 +235,7 @@ let users = [
   }, {
     firstName: 'Matthew',
     lastName: 'Myers',
-    department: 'finance',
+    department: 'sales',
     hasAdminAccess: false,
     picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
@@ -412,7 +412,7 @@ let users = [
   }, {
     firstName: 'Deborah',
     lastName: 'Chavez',
-    department: 'finance',
+    department: 'sales',
     hasAdminAccess: false,
     picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
@@ -471,7 +471,7 @@ let users = [
   }, {
     firstName: 'Paul',
     lastName: 'Morrison',
-    department: 'finance',
+    department: 'sales',
     hasAdminAccess: false,
     picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
@@ -538,7 +538,7 @@ let users = [
   }, {
     firstName: 'Craig',
     lastName: 'Austin',
-    department: 'finance',
+    department: 'sales',
     hasAdminAccess: false,
     picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
@@ -656,7 +656,7 @@ let users = [
   }, {
     firstName: 'Phyllis',
     lastName: 'Phillips',
-    department: 'finance',
+    department: 'sales',
     hasAdminAccess: false,
     picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
