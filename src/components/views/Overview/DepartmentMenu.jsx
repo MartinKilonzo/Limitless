@@ -12,9 +12,9 @@ class DepartmentMenuComponent extends React.Component {
   }
   changeView = (view) => {
     let path = this.props.location.pathname.split('/');
+    if (path[0] === "") path = path.slice(1);
     path[1] = view;
     path = path.join('/');
-    console.log(path);
     browserHistory.push(path);
   }
   render() {
