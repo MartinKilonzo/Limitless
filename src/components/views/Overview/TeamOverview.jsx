@@ -27,7 +27,7 @@ class TeamDeptViewComponent extends React.Component {
       <List style={styles.wrapper}>
         {this.props.users.map((user, key) => {
           if (user.department === this.props.params.department)
-            return <TeamMemberSummary id={user.firstName.toLowerCase()} key={key} label={user.firstName} max={this.props.max} firstName={user.firstName} data={user.paymentMethods}></TeamMemberSummary>
+            return <TeamMemberSummary id={user.firstName.toLowerCase()} key={key} label={user.firstName} max={this.props.max} firstName={user.firstName} data={user.paymentMethods} picture={user.picture}></TeamMemberSummary>
         })}
       </List>
     );

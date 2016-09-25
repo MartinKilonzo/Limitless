@@ -1,12 +1,27 @@
 let getRandomDate = () => {
   return new Date(2016, Math.round(Math.random() * 12), 1 + Math.round(Math.random() * 31))
 };
+let pictures = ['https://s3.amazonaws.com/uifaces/faces/twitter/jeanniehuang/128.jpg',
+'https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg',
+'https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg',
+'https://s3.amazonaws.com/uifaces/faces/twitter/nietzschesolo/128.jpg',
+'https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg',
+'https://s3.amazonaws.com/uifaces/faces/twitter/helloandytran/128.jpg',
+'https://s3.amazonaws.com/uifaces/faces/twitter/littlenono/128.jpg',
+'https://s3.amazonaws.com/uifaces/faces/twitter/rizign/128.jpg',
+'https://s3.amazonaws.com/uifaces/faces/twitter/zamgeo/128.jpg',
+'https://s3.amazonaws.com/uifaces/faces/twitter/i_makethings/128.jpg',
+'https://s3.amazonaws.com/uifaces/faces/twitter/mtnmissy/128.jpg',
+'https://s3.amazonaws.com/uifaces/faces/twitter/jennyshen/128.jpg'
+];
+let iPictures = 0;
 let users = [
   {
     firstName: 'Katherine',
     lastName: 'Carter',
     department: 'operations',
     hasAdminAccess: false,
+    picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
       {
         paymentType: 0,
@@ -69,6 +84,7 @@ let users = [
     lastName: 'Walker',
     department: 'operations',
     hasAdminAccess: false,
+    picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
       {
         paymentType: 0,
@@ -107,6 +123,7 @@ let users = [
     lastName: 'Allen',
     department: 'finance',
     hasAdminAccess: false,
+    picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
       {
         paymentType: 0,
@@ -165,6 +182,7 @@ let users = [
     lastName: 'Harvey',
     department: 'finance',
     hasAdminAccess: false,
+    picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
       {
         paymentType: 0,
@@ -219,6 +237,7 @@ let users = [
     lastName: 'Myers',
     department: 'finance',
     hasAdminAccess: false,
+    picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
       {
         paymentType: 0,
@@ -281,6 +300,7 @@ let users = [
     lastName: 'Reed',
     department: 'operations',
     hasAdminAccess: false,
+    picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
       {
         paymentType: 0,
@@ -331,6 +351,7 @@ let users = [
     lastName: 'George',
     department: 'operations',
     hasAdminAccess: false,
+    picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
       {
         paymentType: 0,
@@ -393,6 +414,7 @@ let users = [
     lastName: 'Chavez',
     department: 'finance',
     hasAdminAccess: false,
+    picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
       {
         paymentType: 0,
@@ -451,6 +473,7 @@ let users = [
     lastName: 'Morrison',
     department: 'finance',
     hasAdminAccess: false,
+    picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
       {
         paymentType: 0,
@@ -517,6 +540,7 @@ let users = [
     lastName: 'Austin',
     department: 'finance',
     hasAdminAccess: false,
+    picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
       {
         paymentType: 0,
@@ -571,6 +595,7 @@ let users = [
     lastName: 'Barnes',
     department: 'marketing',
     hasAdminAccess: false,
+    picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
       {
         paymentType: 0,
@@ -633,6 +658,7 @@ let users = [
     lastName: 'Phillips',
     department: 'finance',
     hasAdminAccess: false,
+    picture: pictures[iPictures++ % pictures.length],
     paymentMethods: [
       {
         paymentType: 0,

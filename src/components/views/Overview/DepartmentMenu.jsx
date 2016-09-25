@@ -14,6 +14,7 @@ class DepartmentMenuComponent extends React.Component {
     let path = this.props.location.pathname.split('/');
     path[1] = view;
     path = path.join('/');
+    console.log(path);
     browserHistory.push(path);
   }
   render() {

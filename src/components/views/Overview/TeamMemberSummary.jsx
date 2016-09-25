@@ -139,7 +139,7 @@ class SpendingUnitComponent extends React.Component {
       <ListItem id={this.props.id}>
         <Paper style={styles.wrapper}>
           <div style={styles.unitWrapper}>
-            <Avatar size={60} style={styles.avatar}>{this.props.label.charAt(0)}</Avatar>
+            <Avatar size={60} src={this.props.picture} style={styles.avatar}></Avatar>
             <div style={styles.unitLabel}>{this.props.label}</div>
             <div style={styles.positionLabel}>{this.props.position || 'Member'}</div>
           </div>
