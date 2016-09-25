@@ -137,7 +137,7 @@ class OverallSummaryComponent extends React.Component {
         flexDirection: 'column'
       },
       label: {
-        fontFamily: 'Roboto, sans',
+        fontFamily: 'Roboto, ',
         fontWeight: 500
       },
       graphWrapper: {

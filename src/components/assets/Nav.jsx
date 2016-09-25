@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {browserHistory} from 'react-router';
 
 import FingerprintLogo from '../views/WelcomeView/FingerprintLogo.jsx';
-import colors from './colors.jsx'
+import colors from './colors.jsx';
 
 class NavComponent extends React.Component {
   constructor(props) {

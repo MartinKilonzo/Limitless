@@ -37,7 +37,6 @@ class Dashboard extends React.Component {
   }
   getDataBy = (criteria, dataToSort) => {
     let users = dataToSort || this.props.userData.users;
-console.log(users)
     let sumCategories = {};
     users.forEach(user => {
       let sum = 0;

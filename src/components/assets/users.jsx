@@ -5,7 +5,7 @@ let users = [
   {
     firstName: 'Katherine',
     lastName: 'Carter',
-    department: 'Operations',
+    department: 'operations',
     hasAdminAccess: false,
     paymentMethods: [
       {
@@ -67,7 +67,7 @@ let users = [
   }, {
     firstName: 'Julie',
     lastName: 'Walker',
-    department: 'Operations',
+    department: 'operations',
     hasAdminAccess: false,
     paymentMethods: [
       {
@@ -105,7 +105,7 @@ let users = [
   }, {
     firstName: 'Charles',
     lastName: 'Allen',
-    department: 'Finance',
+    department: 'finance',
     hasAdminAccess: false,
     paymentMethods: [
       {
@@ -163,7 +163,7 @@ let users = [
   }, {
     firstName: 'Bruce',
     lastName: 'Harvey',
-    department: 'Finance',
+    department: 'finance',
     hasAdminAccess: false,
     paymentMethods: [
       {
@@ -217,7 +217,7 @@ let users = [
   }, {
     firstName: 'Matthew',
     lastName: 'Myers',
-    department: 'Finance',
+    department: 'finance',
     hasAdminAccess: false,
     paymentMethods: [
       {
@@ -279,7 +279,7 @@ let users = [
   }, {
     firstName: 'Joseph',
     lastName: 'Reed',
-    department: 'Operations',
+    department: 'operations',
     hasAdminAccess: false,
     paymentMethods: [
       {
@@ -329,7 +329,7 @@ let users = [
   }, {
     firstName: 'Sean',
     lastName: 'George',
-    department: 'Operations',
+    department: 'operations',
     hasAdminAccess: false,
     paymentMethods: [
       {
@@ -391,7 +391,7 @@ let users = [
   }, {
     firstName: 'Deborah',
     lastName: 'Chavez',
-    department: 'Finance',
+    department: 'finance',
     hasAdminAccess: false,
     paymentMethods: [
       {
@@ -449,7 +449,7 @@ let users = [
   }, {
     firstName: 'Paul',
     lastName: 'Morrison',
-    department: 'Finance',
+    department: 'finance',
     hasAdminAccess: false,
     paymentMethods: [
       {
@@ -515,7 +515,7 @@ let users = [
   }, {
     firstName: 'Craig',
     lastName: 'Austin',
-    department: 'Finance',
+    department: 'finance',
     hasAdminAccess: false,
     paymentMethods: [
       {
@@ -631,7 +631,7 @@ let users = [
   }, {
     firstName: 'Phyllis',
     lastName: 'Phillips',
-    department: 'Finance',
+    department: 'finance',
     hasAdminAccess: false,
     paymentMethods: [
       {

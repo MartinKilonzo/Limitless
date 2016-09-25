@@ -16,8 +16,11 @@ class SpendingUnitComponent extends React.Component {
     };
   }
   getTotal = () => {
+    console.log(this.props)
     let sum = 0;
-    this.props.data.forEach(transaction => sum += transaction);
+    this.props.data.forEach(paymentMethod => {
+      paymentMethod.transactionHistory.forEach(transaction => sum += transaction.amount)
+    });
     return this.formatMoney(sum);
   }
   formatMoney = (value) => {
@@ -32,13 +35,12 @@ class SpendingUnitComponent extends React.Component {
     return '$' + ret;
   }
   render() {
-    let tmp =  [
-      colors.blue, colors.green, colors.yellow, colors.orange, colors.purple
-    ];
+    let tmp = [colors.blue, colors.green, colors.yellow, colors.orange, colors.purple];
     let colorList = [];
     let iColor = 0;
     for (var dataSet in this.props.labels) {
-      if (iColor === tmp.length) iColor = 0;
+      if (iColor === tmp.length)
+        iColor = 0;
       colorList.push(tmp[iColor++]);
     }
     let payments = [];
@@ -114,7 +116,8 @@ class SpendingUnitComponent extends React.Component {
       },
       unitLabel: {
         marginTop: '8px'
-      },positionLabel: {
+      },
+      positionLabel: {
         fontSize: '9pt'
       },
       spendingWrapper: {
