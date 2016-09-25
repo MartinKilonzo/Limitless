@@ -137,8 +137,7 @@ class OverallSummaryComponent extends React.Component {
         flexDirection: 'column'
       },
       label: {
-        fontFamily: 'Roboto, ',
-        fontWeight: 500
+        fontWeight: 300
       },
       graphWrapper: {
         display: 'flex',
@@ -148,9 +147,10 @@ class OverallSummaryComponent extends React.Component {
       },
       totalWrapper: {
         display: 'flex',
-        alignItems: 'flex-end',
+        alignItems: 'center',
         flexDirection: 'column',
         height: '100%',
+        fontSize: '20pt',
         fontWeight: 500
       }
     };
@@ -168,7 +168,6 @@ class OverallSummaryComponent extends React.Component {
           <div style={styles.graphWrapper}>
             <Bar style={styles.graph} data={chartData} options={chartOptions} height={this.state.height} maxWidth={600} redraw></Bar>
           </div>
-
         </div>
       </ListItem>
     );

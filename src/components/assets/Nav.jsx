@@ -28,8 +28,16 @@ class NavComponent extends React.Component {
   render() {
     const route = this.props.location.pathname.split('/')[0];
     const styles = {
+      appbar: {
+        backgroundColor: 'white',
+        color: colors.base
+      },
       title: {
         textAlign: 'center'
+      },
+      iconStyleLeft: {
+        color: colors.base,
+        backgroundColor: colors.base
       },
       fingerprint: {
         height: 'auto',
@@ -45,10 +53,11 @@ class NavComponent extends React.Component {
     return (
       <div>
         {true && <div>
-          <AppBar titleStyle={styles.title} title={fingerprint} onTitleTouchTap={this.handleTitleAction} iconClassNameRight="muidocs-icon-navigation-expand-more" onLeftIconButtonTouchTap={this.handleToggle}></AppBar>
+          <AppBar style={styles.appbar} titleStyle={styles.title} title={fingerprint} onTitleTouchTap={this.handleTitleAction}
+            iconStyleLeft={styles.iconStyleLeft} iconClassNameRight="muidocs-icon-navigation-expand-more" onLeftIconButtonTouchTap={this.handleToggle}></AppBar>
           <Drawer docked={false} width={250} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
             <RaisedButton label="Overview" onTouchTap={this.handleClose.bind(this, 'overview/marketing/team/1')} fullWidth primary={route === 'overview'}></RaisedButton>
-            <RaisedButton label="Payment" onTouchTap={this.handleClose.bind(this, 'payment')} fullWidth primary={route === 'payment'}></RaisedButton>
+            <RaisedButton label="Accounts" onTouchTap={this.handleClose.bind(this, 'payment')} fullWidth primary={route === 'payment'}></RaisedButton>
             <RaisedButton label="Add Receipt" onTouchTap={this.handleClose.bind(this, 'receiptview')} fullWidth primary={route === 'receiptview'}></RaisedButton>
             <RaisedButton label="Teams" onTouchTap={this.handleClose.bind(this, 'manageTeam')} fullWidth primary={route === 'manageTeam'}></RaisedButton>
             <RaisedButton label="Settings" onTouchTap={this.handleClose.bind(this, 'settings')} fullWidth primary={route === 'settings'}></RaisedButton>

@@ -101,7 +101,6 @@ class Dashboard extends React.Component {
       byPerson: this.getDataBy('firstName', this.filterDataBy('department', this.props.params.department)),
       cashPosition: this.getCashPosition()
     };
-    console.log(chartData);
     const styles = {
       wrapper: {
         paddingTop: '6%',

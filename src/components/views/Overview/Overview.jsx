@@ -69,7 +69,7 @@ class OverviewComponent extends React.Component {
       });
     });
     const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
-      users: this.props.userData.users,
+      userData: this.props.userData,
       max: maxValue
     }));
     let selection = this.props.location.pathname.split('/');

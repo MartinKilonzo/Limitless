@@ -16,7 +16,6 @@ class SpendingUnitComponent extends React.Component {
     };
   }
   getTotal = () => {
-    console.log(this.props)
     let sum = 0;
     this.props.data.forEach(paymentMethod => {
       paymentMethod.transactionHistory.forEach(transaction => sum += transaction.amount)
@@ -44,14 +43,18 @@ class SpendingUnitComponent extends React.Component {
       colorList.push(tmp[iColor++]);
     }
     let payments = [];
+    let labels = [];
     this.props.data.forEach(paymentMethod => {
+      labels.push(this.props.paymentMethods[paymentMethod.paymentType].acctName)
+      let sum = 0;
       paymentMethod.transactionHistory.forEach(transaction => {
         //TODO: DATE FILTERS
-        payments.push(transaction.amount);
+        sum += transaction.amount;
       })
-    })
+      payments.push(sum);
+    });
     const chartData = {
-      labels: this.props.labels || [
+      labels: labels || [
         "Credit", "Checking", "Savings"
       ],
       datasets: [
