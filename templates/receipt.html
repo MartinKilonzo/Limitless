@@ -1,0 +1,22 @@
+<style type="text/css">
+  body {
+    font-family: sans-serif;
+  }
+</style>
+<body>
+  <h2>Receipt Scan Review</h2>
+  <hr>
+  <div>
+  {% for item in final %}
+    <h3>{{ item }}</h3>
+    {% for n in final[item] %}
+      <li><b>{{ n }}:</b> ${{ final[item][n] }}</li>
+    {% endfor %}
+  {% endfor %}
+  </div>
+  <hr>
+  <h3>Everything look good? Click Submit below:</h3>
+  <form action="http://localhost:8000/overview/marketing/team/~?">
+    <input type="submit" value="Submit">
+  </form>
+</body>

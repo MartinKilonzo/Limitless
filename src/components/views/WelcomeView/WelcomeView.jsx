@@ -84,6 +84,9 @@ class WelcomeViewComponent extends React.Component {
     return (
       <div style={styles.background}>
         <div style={styles.wrapper}>
+      <div>
+        <img width="80px" height="80px" src={require('./logo.png')}></img>
+      </div>
           <span id="logo" style={styles.logo} onMouseOver={this.highlightFingerPrintLogo} onMouseLeave={this.unHighlightFingerPrintLogo}>Limitless</span>
           <div id="buttonWrapper" style={styles.buttonWrapper}>
             <Password callback={this.highlightFingerPrintLogo}></Password>

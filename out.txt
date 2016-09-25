@@ -1,0 +1,9 @@
+Costco
+
+Pizza $20
+Gasoline $50
+Bus Ticket $5
+Chairs $40
+Water $10
+Tables $60
+
