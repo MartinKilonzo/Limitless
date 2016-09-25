@@ -4,6 +4,9 @@ import ListItem from 'material-ui/List';
 import {Bar} from 'react-chartjs-2';
 
 import colors from '../../assets/colors';
+import receipt from  '../../assets/receipt.js';
+
+console.log(receipt);
 
 class OverallSummaryComponent extends React.Component {
   constructor(props) {
@@ -20,7 +23,7 @@ class OverallSummaryComponent extends React.Component {
     for (var i in balances) {
       sum += limits[i] - balances[i];
     }
-    return this.formatMoney(sum);
+    return this.formatMoney(sum - receipt.value);
   }
   formatMoney = (value) => {
     let ret = (value * 100 | 0);
