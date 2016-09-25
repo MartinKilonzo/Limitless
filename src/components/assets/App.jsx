@@ -24,8 +24,8 @@ const lightTheme = getMuiTheme({
   palette: {
     primary1Color: '#002888',
     primary2Color: '#002888',
-    secondaryColor: '#1a5eff',
-    accent1Color: 'rgb(252,210,29)'
+    secondaryColor: '#FEDF01',
+    accent1Color: '#FEDF01'
   },
   appBar: {
     height: 50

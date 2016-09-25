@@ -1,6 +1,5 @@
 import React from 'react';
 import FontIcon from 'material-ui/FontIcon';
-
 import colors from '../../assets/colors.jsx';
 
 class FingerprintComponent extends React.Component {
@@ -27,7 +26,9 @@ class FingerprintComponent extends React.Component {
       transition: 'color 2s'
     };
     return (
-      <FontIcon id={this.props.id} className="material-icons" style={this.props.style || style} onMouseOver={this.highlight} onMouseOut={this.unHighlight}>fingerprint</FontIcon>
+      <div>
+        <img width="40px" height="40px" src={require('./logo.png')}></img>
+      </div>
     );
   }
 }
