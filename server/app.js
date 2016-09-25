@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const routes = require('./routes.js');
 
 var api = function(port) {
-  // mongoose.connect('/* Add mongoose data here */');
+  mongoose.connect('mongodb://localhost/test');
   httpProxy.createProxyServer();
   var app = express();
 

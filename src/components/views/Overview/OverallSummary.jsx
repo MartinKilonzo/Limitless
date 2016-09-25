@@ -16,8 +16,6 @@ class OverallSummaryComponent extends React.Component {
   getTotal = () => {
     const balances = this.props.data.balance.data;
     let limits = this.props.data.limits.slice();
-    console.log(balances);
-    console.log(limits)
     let sum = 0;
     for (var i in balances) {
       sum += limits[i] - balances[i];

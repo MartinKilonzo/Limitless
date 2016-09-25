@@ -18,6 +18,7 @@ import {
 import Nav from './Nav.jsx';
 import users from './user.jsx';
 import payments from './payments.jsx';
+import DBQuery from './DBQuery.jsx';
 
 const lightTheme = getMuiTheme({
   palette: {
@@ -53,7 +54,6 @@ class AppComponent extends React.Component {
     super(props);
     this.state = props;
   }
-
   componentWillMount = () => injectTapEventPlugin();
   render() {
     const routes = this.props.routes;
@@ -86,8 +86,8 @@ class AppComponent extends React.Component {
 
 AppComponent.defaultProps = {
   userData: {
-    users: users,
-    paymentMethods: payments
+    users: DBQuery.getUsers(),
+    // paymentMethods: DBQuery.getPayments()
   }
 };
 
