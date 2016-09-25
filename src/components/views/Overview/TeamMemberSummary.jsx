@@ -41,6 +41,13 @@ class SpendingUnitComponent extends React.Component {
       if (iColor === tmp.length) iColor = 0;
       colorList.push(tmp[iColor++]);
     }
+    let payments = [];
+    this.props.data.forEach(paymentMethod => {
+      paymentMethod.transactionHistory.forEach(transaction => {
+        //TODO: DATE FILTERS
+        payments.push(transaction.amount);
+      })
+    })
     const chartData = {
       labels: this.props.labels || [
         "Credit", "Checking", "Savings"
@@ -51,7 +58,7 @@ class SpendingUnitComponent extends React.Component {
           backgroundColor: colorList,
           hoverBackgroundColor: colorList,
           borderWidth: 0,
-          data: this.props.data || [65.00, 59.05, 80.20]
+          data: payments || [65.00, 59.05, 80.20]
         }
       ]
     };
@@ -107,6 +114,8 @@ class SpendingUnitComponent extends React.Component {
       },
       unitLabel: {
         marginTop: '8px'
+      },positionLabel: {
+        fontSize: '9pt'
       },
       spendingWrapper: {
         display: 'flex',
@@ -129,7 +138,7 @@ class SpendingUnitComponent extends React.Component {
           <div style={styles.unitWrapper}>
             <Avatar size={60} style={styles.avatar}>{this.props.label.charAt(0)}</Avatar>
             <div style={styles.unitLabel}>{this.props.label}</div>
-            <div style={styles.unitLabel}>{this.props.position || 'Member'}</div>
+            <div style={styles.positionLabel}>{this.props.position || 'Member'}</div>
           </div>
           <div style={styles.spendingWrapper}>
             <HorizontalBar style={styles.graph} data={chartData} options={chartOptions} height={75} maxWidth={600} redraw></HorizontalBar>

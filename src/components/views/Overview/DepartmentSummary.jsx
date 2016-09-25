@@ -9,7 +9,8 @@ class DepartmentSummaryComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalSpend: this.getTotal()
+      totalSpend: this.getTotal(),
+      height: props.height
     };
   }
   getTotal = () => {
@@ -88,9 +89,7 @@ class DepartmentSummaryComponent extends React.Component {
       wrapper: {
         display: 'flex',
         alignItems: 'center',
-        flexDirection: 'row',
-        margin: '0 2% 0 2%',
-        padding: '20px 20px 20px 20px'
+        flexDirection: 'row'
       },
       unitWrapper: {
         display: 'flex',
@@ -119,22 +118,24 @@ class DepartmentSummaryComponent extends React.Component {
     };
     return (
       <ListItem>
-        <Paper style={styles.wrapper}>
+        <div style={styles.wrapper}>
           <div style={styles.unitWrapper}>
             <span style={styles.label}>{this.props.label}</span>
           </div>
           <div style={styles.graphWrapper}>
-            <HorizontalBar style={styles.graph} data={chartData} options={chartOptions} height={100} maxWidth={600} redraw></HorizontalBar>
+            <HorizontalBar style={styles.graph} data={chartData} options={chartOptions} height={this.state.height} maxWidth={600} redraw></HorizontalBar>
           </div>
           <div style={styles.totalWrapper}>
             Total: {this.state.totalSpend}
           </div>
-        </Paper>
+        </div>
       </ListItem>
     );
   }
 }
 
-DepartmentSummaryComponent.defaultProps = {};
+DepartmentSummaryComponent.defaultProps = {
+  height: 100
+};
 
 export default DepartmentSummaryComponent;

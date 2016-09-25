@@ -16,7 +16,7 @@ import {
 } from 'material-ui/styles/colors';
 
 import Nav from './Nav.jsx';
-import users from './users.jsx';
+import users from './user.jsx';
 import payments from './payments.jsx';
 
 const lightTheme = getMuiTheme({

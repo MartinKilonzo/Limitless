@@ -6,7 +6,7 @@ import FlatButton from 'material-ui/FlatButton';
 import DatePicker from 'material-ui/DatePicker';
 import Paper from 'material-ui/Paper';
 
-import DepartmentOverview from './DepartmentOverview.jsx';
+import Dashboard from './Dashboard.jsx';
 import DepartmentMenu from './DepartmentMenu.jsx';
 
 class OverviewComponent extends React.Component {
@@ -14,7 +14,7 @@ class OverviewComponent extends React.Component {
     super(props);
     this.state = {
       startDate: props.startDate,
-      endDate: props.endDate,
+      endDate: props.endDate
     };
   }
   selectFromDropdown = (event, index, value) => {
@@ -62,11 +62,11 @@ class OverviewComponent extends React.Component {
     }
     let maxValue = 0; // Used such that each graph has the same x-axis scale (0 -> maxValue * 1.1)
     this.props.userData.users.forEach(user => {
-      user.data.forEach(spend => {
-        if (spend > maxValue)
-          maxValue = spend;
-        }
-      )
+      user.paymentMethods.forEach(paymentMethod => {
+        paymentMethod.transactionHistory.forEach(transaction => {
+          if (transaction.amount > maxValue) maxValue = transaction.amount;
+          });
+      });
     });
     const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
       users: this.props.userData.users,
@@ -76,7 +76,7 @@ class OverviewComponent extends React.Component {
     selection = selection[selection.length - 2];
     return (
       <div className="container" style={styles.wrapper}>
-        <DepartmentOverview users={this.props.userData.users} {...this.props}></DepartmentOverview>
+        <Dashboard users={this.props.userData.users} {...this.props}></Dashboard>
         <DepartmentMenu {...this.props}></DepartmentMenu>
         <Toolbar>
           <ToolbarGroup>
