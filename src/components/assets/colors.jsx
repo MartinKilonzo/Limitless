@@ -1,5 +1,6 @@
 var colors = {
   base: '#002888',
+
   dark: '#d3d0cb',
   light: '#e7e5df',
   blue: '#9AD2CB',

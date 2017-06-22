@@ -1,4 +1,4 @@
-# bookish-octo-potato
+# Limitless
 
 ## Installation
 
@@ -25,7 +25,7 @@ You are now ready to begin installing the program!
 2. Clone the repo
 
   ``` bash
-  $ git clone https://github.com/Howard-F/bookish-octo-potato.git
+  $ git clone https://github.com/MartinKilonzo/Limitless
   ```
 3. Install dependencies:
 
